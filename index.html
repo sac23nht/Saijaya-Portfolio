@@ -51,6 +51,14 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* Optimize Image Sharpness & Contrast */
+        .crisp-img {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--color-bg-base); }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
@@ -73,7 +81,7 @@
                 </div>
             </a>
 
-            <!-- Desktop Navigation Links (Clean & Aligned) -->
+            <!-- Desktop Navigation Links -->
             <nav class="hidden md:flex items-center gap-5 text-xs font-semibold text-slate-600">
                 <a href="#about" class="hover:text-blue-600 transition-colors">About</a>
                 <a href="#skills" class="hover:text-blue-600 transition-colors">Skills</a>
@@ -89,6 +97,9 @@
             <!-- Social Links & Action -->
             <div class="flex items-center gap-3 shrink-0">
                 <div class="hidden sm:flex items-center gap-2">
+                    <a href="mailto:saijaya.c@gmail.com" class="w-9 h-9 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-600 flex items-center justify-center transition-colors" title="Email Me">
+                        <i class="fa-solid fa-envelope text-base"></i>
+                    </a>
                     <a href="https://github.com/sac23nht" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition-colors" title="GitHub Profile">
                         <i class="fa-brands fa-github text-base"></i>
                     </a>
@@ -97,8 +108,8 @@
                     </a>
                 </div>
 
-                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-semibold rounded-lg bg-slate-900 hover:bg-blue-600 text-white shadow-sm transition-all">
-                    Contact Me
+                <a href="mailto:saijaya.c@gmail.com" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-semibold rounded-lg bg-slate-900 hover:bg-blue-600 text-white shadow-sm transition-all gap-1.5">
+                    <i class="fa-solid fa-envelope text-xs"></i> Contact Me
                 </a>
                 <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none">
                     <i class="fa-solid fa-bars text-lg"></i>
@@ -109,6 +120,9 @@
         <!-- Mobile Navigation Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 shadow-lg">
             <div class="flex items-center gap-4 py-2 border-b border-slate-100">
+                <a href="mailto:saijaya.c@gmail.com" class="flex items-center gap-2 text-xs font-mono font-semibold text-emerald-600">
+                    <i class="fa-solid fa-envelope text-base"></i> saijaya.c@gmail.com
+                </a>
                 <a href="https://github.com/sac23nht" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs font-mono font-semibold text-slate-700">
                     <i class="fa-brands fa-github text-base"></i> GitHub
                 </a>
@@ -123,7 +137,7 @@
             <a href="#education" class="block py-2 text-slate-700 hover:text-blue-600 border-b border-slate-100 font-medium text-xs">Education</a>
             <a href="#certifications" class="block py-2 text-slate-700 hover:text-blue-600 border-b border-slate-100 font-medium text-xs">Certifications</a>
             <a href="#assistant" class="block py-2 text-blue-600 font-bold text-xs">AI Assistant</a>
-            <a href="#contact" class="block w-full text-center py-2.5 mt-2 rounded-lg bg-slate-900 text-white font-semibold text-xs">Contact Me</a>
+            <a href="mailto:saijaya.c@gmail.com" class="block w-full text-center py-2.5 mt-2 rounded-lg bg-slate-900 text-white font-semibold text-xs"><i class="fa-solid fa-paper-plane mr-1.5"></i> Email saijaya.c@gmail.com</a>
         </div>
     </header>
 
@@ -137,9 +151,11 @@
                     
                     <div class="md:col-span-7 space-y-6 text-center md:text-left">
                         <div class="flex flex-col sm:flex-row items-center md:items-start gap-5">
-                            <!-- Profile Picture Avatar -->
+                            <!-- High-DPI Crisp Profile Avatar -->
                             <div class="relative group shrink-0">
-                                <img src="Chilekampalli updated.jpg" alt="Saijaya Rami Reddy Chilekampalli" class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover border-2 border-white shadow-lg ring-4 ring-blue-500/10 group-hover:scale-105 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1e293b/ffffff?text=Saijaya+Rami+Reddy'">
+                                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl p-1 bg-white border border-slate-200 shadow-lg ring-4 ring-blue-500/10 group-hover:scale-105 transition-all duration-300">
+                                    <img src="Chilekampalli updated.jpg" alt="Saijaya Rami Reddy Chilekampalli" class="w-full h-full rounded-xl object-cover crisp-img" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1e293b/ffffff?text=Saijaya+Rami+Reddy'">
+                                </div>
                                 <div class="absolute -bottom-2 -right-2 bg-emerald-500 text-white text-[10px] p-1.5 rounded-lg shadow-md border-2 border-white flex items-center gap-1 font-bold" title="Available for thesis & roles">
                                     <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span> Open
                                 </div>
@@ -173,8 +189,8 @@
 
                         <!-- Action & Social Buttons -->
                         <div class="flex flex-wrap items-center gap-3 pt-2 justify-center md:justify-start">
-                            <a href="#ubica-spotlight" class="px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs shadow-md transition-all flex items-center gap-2">
-                                <i class="fa-solid fa-robot"></i> Explore Ubica Experience
+                            <a href="mailto:saijaya.c@gmail.com" class="px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs shadow-md transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i> Email Me (saijaya.c@gmail.com)
                             </a>
                             <a href="https://github.com/sac23nht" target="_blank" rel="noopener noreferrer" class="px-4 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-semibold text-xs transition-all flex items-center gap-2 shadow-sm">
                                 <i class="fa-brands fa-github text-base"></i> GitHub Profile
@@ -922,9 +938,9 @@
                             <div class="bg-white border border-slate-200 p-4 rounded-xl text-slate-700 max-w-xl shadow-sm">
                                 Hello! I am the portfolio assistant trained on my experience at <strong>Ubica Robotics</strong>, AI certifications, and prior AI/IoT roles. Ask me questions like:
                                 <ul class="list-disc list-inside mt-2 text-blue-700 space-y-1">
+                                    <li>"What is your email address?"</li>
                                     <li>"What did you do at Ubica Robotics?"</li>
                                     <li>"Tell me about your WorldQuant AI &amp; ML certifications."</li>
-                                    <li>"What ROS2 and n8n AI agent experience do you have?"</li>
                                     <li>"Are you open for Master Thesis positions?"</li>
                                 </ul>
                             </div>
@@ -934,9 +950,9 @@
                     <!-- Suggested Prompts -->
                     <div class="px-6 py-3 bg-white border-t border-slate-200 flex flex-wrap gap-2 text-xs">
                         <span class="text-slate-500 font-mono py-1">Quick Prompts:</span>
+                        <button onclick="sendQuickPrompt('How can I contact or email you?')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-emerald-700 border border-slate-200">Email Contact</button>
                         <button onclick="sendQuickPrompt('Tell me about your work at Ubica Robotics')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">Ubica Robotics Work</button>
                         <button onclick="sendQuickPrompt('What AI and Data Science certifications do you hold?')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">Certifications</button>
-                        <button onclick="sendQuickPrompt('How did you improve the Out of Shelf product detection metrics?')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-emerald-700 border border-slate-200">Metrics Boost (85% to 92%)</button>
                         <button onclick="sendQuickPrompt('Are you looking for Master Thesis or full-time roles?')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-blue-700 border border-slate-200">Thesis &amp; Job Search</button>
                     </div>
 
@@ -957,14 +973,23 @@
                 <div class="max-w-2xl mx-auto space-y-6">
                     <h2 class="text-xs font-mono uppercase tracking-widest text-blue-600 font-bold">Let's Connect</h2>
                     <h3 class="text-3xl font-bold text-slate-900 tracking-tight">Open for Master Thesis &amp; AI / Robotics Roles</h3>
-                    <p class="text-slate-600 text-xs">Feel free to reach out for thesis opportunities, research collaboration, or engineering roles in AIoT, Robotic Perception, Computer Vision, and Data Science.</p>
+                    <p class="text-slate-600 text-xs leading-relaxed">Feel free to reach out directly via email for thesis opportunities, research collaboration, or engineering roles in AIoT, Robotic Perception, Computer Vision, and Data Science.</p>
 
-                    <div class="flex flex-wrap justify-center gap-4 pt-4">
-                        <a href="https://www.linkedin.com/in/saijaya-rami-reddy-chilekampalli-71b175170/" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-md transition-all flex items-center gap-2">
+                    <!-- Direct Email Box -->
+                    <div class="inline-flex items-center gap-3 px-6 py-3 bg-white border border-slate-200 rounded-2xl shadow-sm text-sm font-mono text-slate-800">
+                        <i class="fa-solid fa-envelope text-blue-600 text-base"></i>
+                        <span class="font-bold">saijaya.c@gmail.com</span>
+                    </div>
+
+                    <div class="flex flex-wrap justify-center gap-4 pt-2">
+                        <a href="mailto:saijaya.c@gmail.com" class="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-md transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Send Email Now
+                        </a>
+                        <a href="https://www.linkedin.com/in/saijaya-rami-reddy-chilekampalli-71b175170/" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-blue-600 border border-slate-300 font-semibold text-sm transition-all flex items-center gap-2 shadow-sm">
                             <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
                         </a>
                         <a href="https://github.com/sac23nht" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm shadow-md transition-all flex items-center gap-2">
-                            <i class="fa-brands fa-github"></i> View GitHub Profile
+                            <i class="fa-brands fa-github"></i> View GitHub
                         </a>
                     </div>
                 </div>
@@ -978,6 +1003,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
             <p>© 2026 Saijaya Rami Reddy Chilekampalli. AIoT &amp; Robotic Perception Engineer.</p>
             <div class="flex items-center gap-5">
+                <a href="mailto:saijaya.c@gmail.com" class="hover:text-blue-600 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-envelope text-sm"></i> saijaya.c@gmail.com
+                </a>
                 <a href="https://github.com/sac23nht" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 transition-colors flex items-center gap-1.5">
                     <i class="fa-brands fa-github text-sm"></i> GitHub
                 </a>
@@ -1119,7 +1147,8 @@
 
         // AI Portfolio Assistant Chatbot Knowledge Base
         const knowledgeBase = [
-            { keywords: ['linkedin', 'contact', 'connect', 'profile', 'reach out'], answer: 'You can connect with Saijaya Rami Reddy Chilekampalli on LinkedIn at: <a href="https://www.linkedin.com/in/saijaya-rami-reddy-chilekampalli-71b175170/" target="_blank" class="text-blue-600 underline font-bold">linkedin.com/in/saijaya-rami-reddy-chilekampalli-71b175170/</a>' },
+            { keywords: ['email', 'mail', 'contact', 'reach', 'message'], answer: 'You can email Saijaya Rami Reddy Chilekampalli directly at: <a href="mailto:saijaya.c@gmail.com" class="text-blue-600 underline font-bold">saijaya.c@gmail.com</a>' },
+            { keywords: ['linkedin', 'profile', 'connect'], answer: 'Connect on LinkedIn at: <a href="https://www.linkedin.com/in/saijaya-rami-reddy-chilekampalli-71b175170/" target="_blank" class="text-blue-600 underline font-bold">linkedin.com/in/saijaya-rami-reddy-chilekampalli-71b175170/</a>' },
             { keywords: ['github', 'code', 'repo', 'repository', 'projects'], answer: 'Check out the GitHub profile and code repositories at: <a href="https://github.com/sac23nht" target="_blank" class="text-blue-600 underline font-bold">github.com/sac23nht</a>' },
             { keywords: ['ubica', 'robotics', 'working student', 'perception', 'shelf', 'retail', 'oos', 'out of shelf'], answer: 'At Ubica Robotics (Bremen, Germany), I served as a Working Student in the Perception Team (Mar 2026 – Aug 2026). I built efficient computer vision pipelines on ROS2 to understand retail environments, increasing Out-of-Shelf product detection Precision from 85% to 92% and Recall from 79% to 89%.' },
             { keywords: ['ros', 'ros2', 'robot', 'colcon', 'testbench', 'goal'], answer: 'In ROS2, I integrated computer vision perception pipelines on mobile retail robots, triggering goal execution, stage verification, and metric evaluation on testbenches. I also authored unit tests using colcon build/test and built Python automated scripts to evaluate ground truth metrics (TP, FP, FN, Precision, Recall).' },
