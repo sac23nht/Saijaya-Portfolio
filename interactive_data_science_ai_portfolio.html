@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIoT & Robotic Perception Engineer | Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        theme: {
+                            base: 'var(--color-bg-base)',
+                            panel: 'var(--color-bg-panel)',
+                            card: 'var(--color-bg-card)',
+                            border: 'var(--color-border)',
+                            primary: 'var(--color-primary)',
+                            'primary-hover': 'var(--color-primary-hover)',
+                            secondary: 'var(--color-secondary)',
+                            accent: 'var(--color-accent)',
+                            heading: 'var(--color-text-heading)',
+                            body: 'var(--color-text-body)',
+                            muted: 'var(--color-text-muted)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Theme 1: Soft Slate (Default - Light & Decent) */
+        :root, [data-theme="soft-slate"] {
+            --color-bg-base: #f8fafc;
+            --color-bg-panel: #ffffff;
+            --color-bg-card: #ffffff;
+            --color-border: #e2e8f0;
+            --color-primary: #3b82f6;
+            --color-primary-hover: #2563eb;
+            --color-secondary: #0ea5e9;
+            --color-accent: #10b981;
+            --color-text-heading: #0f172a;
+            --color-text-body: #334155;
+            --color-text-muted: #64748b;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+            --badge-border: #bfdbfe;
+            --gradient-text: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #0284c7 100%);
+            --shadow-subtle: 0 4px 20px -2px rgba(148, 163, 184, 0.12);
+        }
+
+        /* Theme 2: Clean Indigo */
+        [data-theme="clean-indigo"] {
+            --color-bg-base: #f9fafb;
+            --color-bg-panel: #ffffff;
+            --color-bg-card: #ffffff;
+            --color-border: #e5e7eb;
+            --color-primary: #6366f1;
+            --color-primary-hover: #4f46e5;
+            --color-secondary: #8b5cf6;
+            --color-accent: #059669;
+            --color-text-heading: #111827;
+            --color-text-body: #374151;
+            --color-text-muted: #6b7280;
+            --badge-bg: #eef2ff;
+            --badge-text: #4338ca;
+            --badge-border: #c7d2fe;
+            --gradient-text: linear-gradient(135deg, #312e81 0%, #4f46e5 50%, #7c3aed 100%);
+            --shadow-subtle: 0 4px 20px -2px rgba(156, 163, 175, 0.12);
+        }
+
+        /* Theme 3: Nordic Teal */
+        [data-theme="nordic-teal"] {
+            --color-bg-base: #f4f7f6;
+            --color-bg-panel: #ffffff;
+            --color-bg-card: #ffffff;
+            --color-border: #e2e8f0;
+            --color-primary: #0d9488;
+            --color-primary-hover: #0f766e;
+            --color-secondary: #0284c7;
+            --color-accent: #d97706;
+            --color-text-heading: #0f172a;
+            --color-text-body: #334155;
+            --color-text-muted: #64748b;
+            --badge-bg: #ccfbf1;
+            --badge-text: #0f766e;
+            --badge-border: #99f6e4;
+            --gradient-text: linear-gradient(135deg, #115e59 0%, #0d9488 50%, #0284c7 100%);
+            --shadow-subtle: 0 4px 20px -2px rgba(148, 163, 184, 0.12);
+        }
+
+        /* Theme 4: Warm Canvas */
+        [data-theme="warm-canvas"] {
+            --color-bg-base: #fafaf9;
+            --color-bg-panel: #ffffff;
+            --color-bg-card: #ffffff;
+            --color-border: #e7e5e4;
+            --color-primary: #44403c;
+            --color-primary-hover: #292524;
+            --color-secondary: #0284c7;
+            --color-accent: #15803d;
+            --color-text-heading: #1c1917;
+            --color-text-body: #44403c;
+            --color-text-muted: #78716c;
+            --badge-bg: #f5f5f4;
+            --badge-text: #292524;
+            --badge-border: #d6d3d1;
+            --gradient-text: linear-gradient(135deg, #1c1917 0%, #44403c 50%, #0284c7 100%);
+            --shadow-subtle: 0 4px 20px -2px rgba(168, 162, 158, 0.12);
+        }
+
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--color-bg-base);
+            color: var(--color-text-body);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .light-panel {
+            background-color: var(--color-bg-panel);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--color-bg-base); }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="min-h-screen selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-xl bg-slate-900 text-white flex items-center justify-center font-mono font-bold text-xs shadow-md group-hover:bg-blue-600 transition-colors">
+                    AIoT
+                </div>
+                <div>
+                    <span class="font-bold text-base tracking-tight text-slate-900 block leading-tight">AIoT &amp; ROS2 Engineer</span>
+                    <span class="text-[11px] text-slate-500 font-mono tracking-wider">Perception &amp; Data Science</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-slate-600">
+                <a href="#ubica-spotlight" class="text-blue-600 hover:text-blue-700 transition-colors flex items-center gap-1.5 font-bold">
+                    <i class="fa-solid fa-robot"></i> Ubica Role
+                </a>
+                <a href="#about" class="hover:text-slate-900 transition-colors">About</a>
+                <a href="#skills" class="hover:text-slate-900 transition-colors">Skills</a>
+                <a href="#experience" class="hover:text-slate-900 transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-slate-900 transition-colors">Projects</a>
+                <a href="#education" class="hover:text-slate-900 transition-colors">Education</a>
+                <a href="#certifications" class="hover:text-slate-900 transition-colors">Certifications</a>
+                <a href="#assistant" class="hover:text-blue-600 transition-colors flex items-center gap-1.5 text-blue-600 font-bold">
+                    <i class="fa-solid fa-sparkles text-[10px]"></i> AI Assistant
+                </a>
+            </nav>
+
+            <!-- Theme Switcher & Contact Button -->
+            <div class="flex items-center gap-3">
+                <!-- Social Links -->
+                <div class="hidden sm:flex items-center gap-2 mr-1">
+                    <a href="https://github.com/sac23nht" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition-colors" title="GitHub Profile">
+                        <i class="fa-brands fa-github text-sm"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/saijaya-rami-reddy-chilekampalli-71b175170/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-600 flex items-center justify-center transition-colors" title="LinkedIn Profile">
+                        <i class="fa-brands fa-linkedin-in text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Theme Palette Selector -->
+                <div class="hidden lg:flex items-center bg-slate-100 border border-slate-200 rounded-lg p-1 gap-1" title="Select Soft Theme Palette">
+                    <button onclick="setTheme('soft-slate')" class="theme-btn w-5 h-5 rounded bg-blue-500 hover:scale-110 transition-transform ring-2 ring-blue-400/50" title="Soft Slate Theme"></button>
+                    <button onclick="setTheme('clean-indigo')" class="theme-btn w-5 h-5 rounded bg-indigo-500 hover:scale-110 transition-transform" title="Clean Indigo Theme"></button>
+                    <button onclick="setTheme('nordic-teal')" class="theme-btn w-5 h-5 rounded bg-teal-600 hover:scale-110 transition-transform" title="Nordic Teal Theme"></button>
+                    <button onclick="setTheme('warm-canvas')" class="theme-btn w-5 h-5 rounded bg-stone-700 hover:scale-110 transition-transform" title="Warm Canvas Theme"></button>
+                </div>
+
+                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-semibold rounded-lg bg-slate-900 hover:bg-blue-600 text-white shadow-sm transition-all">
+                    Get In Touch
+                </a>
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                <span class="text-xs font-mono text-slate-500">Theme Palette:</span>
+                <div class="flex items-center gap-2">
+                    <button onclick="setTheme('soft-slate')" class="w-5 h-5 rounded bg-blue-500 border border-slate-200"></button>
+                    <button onclick="setTheme('clean-indigo')" class="w-5 h-5 rounded bg-indigo-500 border border-slate-200"></button>
+                    <button onclick="setTheme('nordic-teal')" class="w-5 h-5 rounded bg-teal-600 border border-slate-200"></button>
+                    <button onclick="setTheme('warm-canvas')" class="w-5 h-5 rounded bg-stone-700 border border-slate-200"></button>
+                </div>
+            </div>
+            <div class="flex items-center gap-3 py-2 border-b border-slate-100">
+                <a href="https://github.com/sac23nht" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs font-mono font-semibold text-slate-700">
+                    <i class="fa-brands fa-github text-base"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/saijaya-rami-reddy-chilekampalli-71b175170/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs font-mono font-semibold text-blue-600">
+                    <i class="fa-brands fa-linkedin text-base"></i> LinkedIn
+                </a>
+            </div>
+            <a href="#ubica-spotlight" class="block py-2 text-blue-600 font-bold border-b border-slate-100"><i class="fa-solid fa-robot mr-2"></i> Ubica Robotics Spotlight</a>
+            <a href="#about" class="block py-2 text-slate-700 hover:text-slate-900 border-b border-slate-100">About</a>
+            <a href="#skills" class="block py-2 text-slate-700 hover:text-slate-900 border-b border-slate-100">Skills</a>
+            <a href="#experience" class="block py-2 text-slate-700 hover:text-slate-900 border-b border-slate-100">Experience</a>
+            <a href="#projects" class="block py-2 text-slate-700 hover:text-slate-900 border-b border-slate-100">Projects</a>
+            <a href="#education" class="block py-2 text-slate-700 hover:text-slate-900 border-b border-slate-100">Education &amp; Certs</a>
+            <a href="#assistant" class="block py-2 text-blue-600 font-bold">AI Assistant Demo</a>
+            <a href="#contact" class="block w-full text-center py-2.5 mt-2 rounded-lg bg-slate-900 text-white font-semibold">Contact Me</a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="pt-16">
+
+        <!-- Hero Section -->
+        <section id="hero" class="relative py-20 lg:py-24 bg-gradient-to-b from-slate-100/70 to-slate-50 border-b border-slate-200/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid md:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="md:col-span-7 space-y-6 text-center md:text-left">
+                        <div class="flex flex-col sm:flex-row items-center md:items-start gap-5">
+                            <!-- Profile Picture Avatar -->
+                            <div class="relative group shrink-0">
+                                <img src="Chilekampalli updated.jpg" alt="Saijaya Rami Reddy Chilekampalli" class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover border-2 border-white shadow-lg ring-4 ring-blue-500/10 group-hover:scale-105 transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1e293b/ffffff?text=Saijaya+Rami+Reddy'">
+                                <div class="absolute -bottom-2 -right-2 bg-emerald-500 text-white text-[10px] p-1.5 rounded-lg shadow-md border-2 border-white flex items-center gap-1 font-bold" title="Available for thesis & roles">
+                                    <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span> Open
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-mono font-medium">
+                                    <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                                    Recent Role: Working Student @ Ubica Robotics
+                                </div>
+                                <h2 class="text-xl sm:text-2xl font-bold text-slate-800">Saijaya Rami Reddy Chilekampalli</h2>
+                                <p class="text-xs font-mono text-slate-500">AIoT & Robotic Perception Engineer</p>
+                            </div>
+                        </div>
+
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                            Engineering Intelligent <br>
+                            <span class="gradient-text">ROS2 Perception &amp; AIoT Systems</span>
+                        </h1>
+
+                        <p class="text-slate-600 text-base max-w-2xl leading-relaxed">
+                            M.Sc. IoT &amp; Smart Systems student with 3+ years of experience across <strong class="text-slate-900">Ubica Robotics (ROS2 Perception)</strong>, <strong class="text-slate-900">GalaxE Solutions (YOLOv8 CV)</strong>, and <strong class="text-slate-900">TCS (Data Analytics)</strong>. Specialized in computer vision pipelines, autonomous retail shelf scanning, predictive maintenance, and MLOps.
+                        </p>
+
+                        <!-- Highlights Quick Badges -->
+                        <div class="flex flex-wrap gap-2 pt-1 justify-center md:justify-start">
+                            <span class="px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-mono text-slate-700 shadow-sm"><i class="fa-solid fa-robot mr-1.5 text-blue-600"></i> Ubica Robotics (Bremen)</span>
+                            <span class="px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-mono text-emerald-700 shadow-sm"><i class="fa-solid fa-chart-line mr-1.5 text-emerald-600"></i> Precision 85% → 92%</span>
+                            <span class="px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-mono text-slate-700 shadow-sm"><i class="fa-solid fa-graduation-cap mr-1.5 text-slate-600"></i> M.Sc. IoT @ WHZ</span>
+                            <span class="px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-mono text-blue-700 shadow-sm"><i class="fa-solid fa-brain mr-1.5 text-blue-600"></i> ROS2 / Colcon / PyTorch</span>
+                        </div>
+
+                        <!-- Action & Social Buttons -->
+                        <div class="flex flex-wrap items-center gap-3 pt-2 justify-center md:justify-start">
+                            <a href="#ubica-spotlight" class="px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs shadow-md transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-robot"></i> Explore Ubica Experience
+                            </a>
+                            <a href="https://github.com/sac23nht" target="_blank" rel="noopener noreferrer" class="px-4 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-semibold text-xs transition-all flex items-center gap-2 shadow-sm">
+                                <i class="fa-brands fa-github text-base"></i> GitHub Profile
+                            </a>
+                            <a href="https://www.linkedin.com/in/saijaya-rami-reddy-chilekampalli-71b175170/" target="_blank" rel="noopener noreferrer" class="px-4 py-3 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 font-semibold text-xs transition-all flex items-center gap-2 shadow-sm">
+                                <i class="fa-brands fa-linkedin text-base"></i> LinkedIn Profile
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hero Visual / Key Impact Metrics Card -->
+                    <div class="md:col-span-5">
+                        <div class="relative mx-auto max-w-md">
+                            <div class="light-panel rounded-2xl p-6 sm:p-8 space-y-6">
+                                <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-3 h-3 rounded-full bg-slate-300"></div>
+                                        <div class="w-3 h-3 rounded-full bg-slate-300"></div>
+                                        <div class="w-3 h-3 rounded-full bg-slate-300"></div>
+                                    </div>
+                                    <span class="font-mono text-xs text-slate-400">profile: perception_engineer.json</span>
+                                </div>
+
+                                <!-- Metric Counters -->
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-center md:text-left">
+                                        <div class="text-3xl font-extrabold text-blue-600 font-mono">92%</div>
+                                        <div class="text-xs text-slate-600 mt-1 font-medium">Retail CV Precision (Ubica)</div>
+                                    </div>
+                                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-center md:text-left">
+                                        <div class="text-3xl font-extrabold text-emerald-600 font-mono">89%</div>
+                                        <div class="text-xs text-slate-600 mt-1 font-medium">Retail CV Recall (Ubica)</div>
+                                    </div>
+                                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-center md:text-left">
+                                        <div class="text-3xl font-extrabold text-slate-800 font-mono">ROS2</div>
+                                        <div class="text-xs text-slate-600 mt-1 font-medium">Robotic Middleware</div>
+                                    </div>
+                                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-center md:text-left">
+                                        <div class="text-3xl font-extrabold text-slate-800 font-mono">3+ Yrs</div>
+                                        <div class="text-xs text-slate-600 mt-1 font-medium">Robotics &amp; AI Experience</div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-blue-50/60 p-4 rounded-xl border border-blue-200 flex items-center justify-between text-xs font-mono text-blue-900">
+                                    <span class="flex items-center gap-2 font-medium">
+                                        <i class="fa-solid fa-graduation-cap text-blue-600"></i> Open for Thesis &amp; AI Roles
+                                    </span>
+                                    <span class="text-emerald-700 font-bold"><i class="fa-solid fa-circle-check"></i> Available</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ubica Robotics Experience Spotlight Section -->
+        <section id="ubica-spotlight" class="py-16 bg-white border-b border-slate-200 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="p-3 rounded-xl bg-blue-50 text-blue-600 border border-blue-200 text-xl">
+                        <i class="fa-solid fa-robot"></i>
+                    </span>
+                    <div>
+                        <span class="text-xs font-mono uppercase tracking-wider text-blue-600 font-bold">Featured Role Spotlight</span>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Ubica Robotics — Perception Team</h2>
+                        <p class="text-xs font-mono text-slate-500 mt-0.5">Bremen, Germany • Working Student (Mar 2026 – Aug 2026)</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-12 gap-8 items-stretch">
+                    
+                    <!-- Main Experience Card -->
+                    <div class="md:col-span-8 light-panel p-6 sm:p-8 rounded-2xl border-slate-200 space-y-6">
+                        <div class="space-y-3">
+                            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                                <i class="fa-solid fa-microchip text-blue-600"></i> Key Technical Contributions &amp; Achievements
+                            </h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                As a Working Student in the Perception Team at <strong>Ubica Robotics</strong>, I contributed directly to state-of-the-art computer vision systems deployed on autonomous retail shelf-scanning robots. My role bridged deep perception algorithms, ROS2 navigation workflows, ground-truth metric validation scripts, and colcon test suites.
+                            </p>
+                        </div>
+
+                        <!-- Highlights Bullets -->
+                        <div class="grid sm:grid-cols-2 gap-4 text-xs leading-relaxed">
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-1.5">
+                                <div class="font-bold text-blue-700 font-mono flex items-center gap-1.5">
+                                    <i class="fa-solid fa-bullseye text-xs"></i> Perception Accuracy Boost
+                                </div>
+                                <p class="text-slate-600">Designed and deployed refined vision logic to handle complex retail layouts. Boosted Out-of-Shelf (OOS) identification <strong>Precision from 85% to 92%</strong> and <strong>Recall from 79% to 89%</strong>.</p>
+                            </div>
+
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-1.5">
+                                <div class="font-bold text-slate-900 font-mono flex items-center gap-1.5">
+                                    <i class="fa-solid fa-network-wired text-xs"></i> ROS2 Navigation &amp; Testing
+                                </div>
+                                <p class="text-slate-600">Integrated computer vision algorithms into the <strong>ROS2 framework</strong>, executing robot navigation goals, tracking pipeline stages, and verifying real-time perception outputs on testbenches.</p>
+                            </div>
+
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-1.5">
+                                <div class="font-bold text-emerald-700 font-mono flex items-center gap-1.5">
+                                    <i class="fa-solid fa-square-poll-vertical text-xs"></i> Ground-Truth Metric Tools
+                                </div>
+                                <p class="text-slate-600">Engineered automated Python metrics scripts that parse ground-truth CSV data to calculate crucial validation metrics (<strong>True Positives, False Positives, False Negatives, Precision, Recall</strong>).</p>
+                            </div>
+
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-1.5">
+                                <div class="font-bold text-indigo-700 font-mono flex items-center gap-1.5">
+                                    <i class="fa-solid fa-vial-circle-check text-xs"></i> Colcon Testing &amp; GitLab
+                                </div>
+                                <p class="text-slate-600">Developed comprehensive unit tests executed via <strong>colcon build/test</strong>. Debugged core perception repos, and managed team code reviews using GitLab Merge Requests (MRs).</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-100">
+                            <span class="px-2.5 py-1 bg-blue-50 text-blue-700 border border-blue-200 rounded-md text-xs font-mono font-medium">ROS2 Middleware</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-mono">Retail Perception</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-mono">Python Metric Analysis</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-mono">Colcon Build &amp; Test</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-mono">GitLab CI / MRs</span>
+                        </div>
+                    </div>
+
+                    <!-- Metrics Sidebar Card -->
+                    <div class="md:col-span-4 flex flex-col justify-between light-panel p-6 sm:p-8 rounded-2xl border-slate-200 space-y-6">
+                        <div>
+                            <span class="text-xs font-mono text-blue-600 font-bold uppercase tracking-wider block mb-2">Quantified Impact</span>
+                            <h4 class="text-base font-bold text-slate-900 mb-4">Out-of-Shelf (OOS) Detection Gains</h4>
+
+                            <div class="space-y-4 font-mono text-xs">
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-slate-700 font-medium">Precision Rate</span>
+                                        <span class="text-blue-600 font-bold">85% → 92% (+7%)</span>
+                                    </div>
+                                    <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+                                        <div class="h-full bg-blue-600 rounded-full" style="width: 92%"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-slate-700 font-medium">Recall Rate</span>
+                                        <span class="text-emerald-600 font-bold">79% → 89% (+10%)</span>
+                                    </div>
+                                    <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+                                        <div class="h-full bg-emerald-500 rounded-full" style="width: 89%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 border-t border-slate-100 text-slate-500 text-[11px] leading-relaxed">
+                                    <i class="fa-solid fa-circle-info text-blue-500 mr-1"></i> Evaluated on real-world retail store datasets and robot testbench simulations.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                            <span class="text-xs font-mono text-slate-700 font-bold block"><i class="fa-solid fa-robot text-blue-600 mr-1.5"></i> Target Environment</span>
+                            <p class="text-xs text-slate-600">Autonomous retail scanning robots operating in supermarket aisles with dynamic lighting and variable shelf arrangements.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-xs font-mono uppercase tracking-widest text-blue-600 font-bold mb-2">About Me</h2>
+                    <p class="text-3xl font-bold text-slate-900 tracking-tight">Professional Summary</p>
+                    <div class="w-12 h-1 bg-blue-600 mx-auto mt-3 rounded-full"></div>
+                </div>
+
+                <!-- Comprehensive Narrative Paragraph Box -->
+                <div class="max-w-4xl mx-auto mb-16">
+                    <div class="light-panel p-8 rounded-2xl border-slate-200 shadow-sm relative overflow-hidden">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="p-2 rounded-lg bg-blue-50 text-blue-600 border border-blue-100 text-lg">
+                                <i class="fa-solid fa-user-gear"></i>
+                            </span>
+                            <h3 class="text-lg font-bold text-slate-900">Background &amp; Career Objective</h3>
+                        </div>
+
+                        <p class="text-slate-600 text-base leading-relaxed space-y-4">
+                            Currently pursuing my <strong>Master’s degree in Internet of Things (IoT) and Smart Systems</strong> at Westsächsische Hochschule Zwickau, Germany, I combine advanced academic research in sensor telemetry and embedded microcontrollers with over <strong>3 years of experience</strong> across industry and robotics teams. 
+                            Most recently, as a <strong>Working Student in the Perception Team at Ubica Robotics</strong>, I engineered high-efficiency computer vision pipelines on the <strong>ROS2 framework</strong> to analyze retail environments, boosting Out-of-Shelf product identification precision from 85% to 92% and recall from 79% to 89%. 
+                            My prior industry roles as a Data Scientist at <em>GalaxE Solutions</em> and Data Analyst at <em>Tata Consultancy Services (TCS)</em> provided strong grounding in real-time <strong>Computer Vision (YOLOv8, MTCNN)</strong>, <strong>Predictive Maintenance (XGBoost)</strong>, <strong>Generative AI (LangChain, n8n Agent Workflows, Fine-Tuning)</strong>, and MLOps deployments with AWS, Docker, FastAPI, and Streamlit. 
+                            Driven by a passion for connecting physical robotic hardware with intelligent computer vision, I am actively seeking compelling <strong>Master Thesis positions or full-time roles</strong> in <strong>AIoT, Robotic Perception, Computer Vision, and Machine Learning</strong>.
+                        </p>
+
+                        <!-- Key Pillars Grid -->
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-6 pt-6 border-t border-slate-100 text-xs font-mono">
+                            <div class="flex items-center gap-2 text-blue-700 font-semibold">
+                                <i class="fa-solid fa-robot"></i> ROS2 &amp; Ubica Robotics
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-700 font-semibold">
+                                <i class="fa-solid fa-graduation-cap"></i> M.Sc. IoT Student
+                            </div>
+                            <div class="flex items-center gap-2 text-emerald-700 font-semibold">
+                                <i class="fa-solid fa-microchip"></i> AIoT &amp; Embedded Systems
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-900 font-semibold">
+                                <i class="fa-solid fa-magnifying-glass"></i> Seeking Thesis &amp; Roles
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3 Core Domain Expertise Cards -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="light-panel p-6 rounded-2xl border-slate-200 hover:border-blue-400 transition-all group">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg mb-4 font-bold border border-blue-100">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-900 mb-2">Robotic Perception &amp; Computer Vision</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Experienced in ROS2 pipeline development, retail product &amp; shelf perception, real-time object detection (YOLOv8), facial recognition (MTCNN), and robot testbench metric analysis.
+                        </p>
+                    </div>
+
+                    <div class="light-panel p-6 rounded-2xl border-slate-200 hover:border-blue-400 transition-all group">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-lg mb-4 font-bold border border-indigo-100">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-900 mb-2">Generative AI &amp; Agentic Workflows</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Building end-to-end RAG pipelines with LangChain &amp; Pinecone, fine-tuning LLMs, automating agent workflows with n8n, and generating image models with Stable Diffusion.
+                        </p>
+                    </div>
+
+                    <div class="light-panel p-6 rounded-2xl border-slate-200 hover:border-blue-400 transition-all group">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg mb-4 font-bold border border-emerald-100">
+                            <i class="fa-solid fa-chart-area"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-slate-900 mb-2">Predictive Maintenance &amp; Automated Testing</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Specialized in smart meter connectivity failure prediction (XGBoost/Streamlit), automated ground-truth metric generation scripts (TP/FP/FN), and unit testing with colcon.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-mono uppercase tracking-widest text-blue-600 font-bold mb-2">Career Journey</h2>
+                    <p class="text-3xl font-bold text-slate-900 tracking-tight">Professional Experience</p>
+                    <p class="text-slate-600 text-xs mt-2">3+ Years of hands-on work across ROS2 Perception, Computer Vision, AIoT, and Data Analytics</p>
+                    <div class="w-12 h-1 bg-blue-600 mx-auto mt-3 rounded-full"></div>
+                </div>
+
+                <div class="relative border-l-2 border-slate-200 ml-4 md:ml-32 space-y-12">
+
+                    <!-- Job 1: Ubica Robotics -->
+                    <div class="relative pl-6 md:pl-10 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-blue-600 group-hover:scale-125 transition-all shadow-sm"></div>
+                        
+                        <div class="md:absolute md:-left-40 md:top-1 text-xs font-mono text-blue-600 font-bold mb-2 md:mb-0">
+                            Mar 2026 – Aug 2026
+                        </div>
+
+                        <div class="light-panel p-6 sm:p-8 rounded-2xl border-slate-200 hover:border-blue-400 transition-all">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                                <div>
+                                    <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                                        Working Student - Perception Team 
+                                        <span class="text-xs font-normal text-blue-700 font-mono px-2.5 py-0.5 rounded-full bg-blue-50 border border-blue-200">Featured Role</span>
+                                    </h3>
+                                    <p class="text-slate-700 text-xs font-semibold mt-1">Ubica Robotics GmbH • <span class="text-slate-500 font-normal">Bremen, Germany</span></p>
+                                </div>
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-blue-50 text-blue-700 border border-blue-200 w-fit font-medium">
+                                    <i class="fa-solid fa-robot"></i> ROS2 &amp; Robotic Perception
+                                </span>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-3 mb-6 font-mono text-xs">
+                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-slate-700">
+                                    <span class="text-slate-500 block text-[10px] uppercase font-sans">OOS Identification Precision</span>
+                                    <span class="text-emerald-600 font-bold text-sm">85% → 92% (+7%)</span>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-slate-700">
+                                    <span class="text-slate-500 block text-[10px] uppercase font-sans">OOS Identification Recall</span>
+                                    <span class="text-blue-600 font-bold text-sm">79% → 89% (+10%)</span>
+                                </div>
+                            </div>
+
+                            <ul class="space-y-3 text-slate-600 text-xs leading-relaxed mb-6">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-angle-right text-blue-600 mt-1 text-xs shrink-0"></i>
+                                    <span>Architected and deployed efficient computer vision algorithms on the <strong class="text-slate-900">ROS2 framework</strong> to analyze retail store shelves and identify Out-of-Shelf (OOS) items under dynamic retail lighting and shelf arrangements.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-angle-right text-blue-600 mt-1 text-xs shrink-0"></i>
+                                    <span>Engineered automated <strong class="text-slate-900">Python metric evaluation scripts</strong> that parse ground-truth CSV datasets to output true metrics (<strong class="text-slate-800">TP, FP, FN, Precision, Recall</strong>).</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-angle-right text-blue-600 mt-1 text-xs shrink-0"></i>
+                                    <span>Integrated perception pipelines into autonomous scanning robots, verifying real-time perception outputs during navigation goal execution and automated testbench runs.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-angle-right text-blue-600 mt-1 text-xs shrink-0"></i>
+                                    <span>Authored unit test suites using <strong class="text-slate-900">colcon build/test</strong>, resolved critical algorithmic bugs in core perception repositories, and managed team code integration via <strong class="text-slate-900">GitLab Merge Requests (MRs)</strong>.</span>
+                                </li>
+                            </ul>
+
+                            <div class="flex flex-wrap gap-2 pt-3 border-t border-slate-100">
+                                <span class="px-2 py-0.5 bg-blue-50 text-blue-700 border border-blue-200 rounded text-xs font-mono">ROS2 Middleware</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Python Metric Analysis</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Retail CV</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Colcon Testing</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">GitLab MRs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job 2: GalaxE Solutions -->
+                    <div class="relative pl-6 md:pl-10 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-slate-400 group-hover:scale-125 transition-all shadow-sm"></div>
+                        
+                        <div class="md:absolute md:-left-40 md:top-1 text-xs font-mono text-slate-500 font-bold mb-2 md:mb-0">
+                            Oct 2022 – Nov 2023
+                        </div>
+
+                        <div class="light-panel p-6 sm:p-8 rounded-2xl border-slate-200 hover:border-slate-400 transition-all">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                                <div>
+                                    <h3 class="text-lg font-bold text-slate-900">Junior Data Scientist</h3>
+                                    <p class="text-slate-700 text-xs font-semibold mt-1">GalaxE Solutions • <span class="text-slate-500 font-normal">Hyderabad, India</span></p>
+                                </div>
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-slate-100 text-slate-700 border border-slate-200 w-fit">
+                                    <i class="fa-solid fa-eye"></i> Computer Vision &amp; AI
+                                </span>
+                            </div>
+
+                            <ul class="space-y-3 text-slate-600 text-xs leading-relaxed mb-6">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-angle-right text-slate-400 mt-1 text-xs shrink-0"></i>
+                                    <span>Designed and implemented an AI safety surveillance system using <strong class="text-slate-900">YOLOv8</strong>, reducing manual workplace monitoring effort by <strong class="text-slate-900">60%</strong>.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-angle-right text-slate-400 mt-1 text-xs shrink-0"></i>
+                                    <span>Fine-tuned object detection models achieving <strong class="text-slate-900">over 92% precision</strong> for real-time Personal Protective Equipment (PPE) compliance checks.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-angle-right text-slate-400 mt-1 text-xs shrink-0"></i>
+                                    <span>Built a central <strong class="text-slate-900">AWS S3 data lake</strong> pipeline for training images, boosting data accessibility and model training speed by <strong class="text-slate-900">30%</strong>.</span>
+                                </li>
+                            </ul>
+
+                            <div class="flex flex-wrap gap-2 pt-3 border-t border-slate-100">
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">YOLOv8</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">PyTorch</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">AWS S3</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Flask API</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job 3: TCS -->
+                    <div class="relative pl-6 md:pl-10 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-slate-400 group-hover:scale-125 transition-all shadow-sm"></div>
+                        
+                        <div class="md:absolute md:-left-40 md:top-1 text-xs font-mono text-slate-500 font-bold mb-2 md:mb-0">
+                            Jun 2021 – Apr 2023
+                        </div>
+
+                        <div class="light-panel p-6 sm:p-8 rounded-2xl border-slate-200 hover:border-slate-400 transition-all">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                                <div>
+                                    <h3 class="text-lg font-bold text-slate-900">Junior Data Analyst</h3>
+                                    <p class="text-slate-700 text-xs font-semibold mt-1">Tata Consultancy Services • <span class="text-slate-500 font-normal">Hyderabad, India</span></p>
+                                </div>
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-slate-100 text-slate-700 border border-slate-200 w-fit">
+                                    <i class="fa-solid fa-chart-line"></i> ETL &amp; Analytics
+                                </span>
+                            </div>
+
+                            <ul class="space-y-3 text-slate-600 text-xs leading-relaxed mb-6">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-angle-right text-slate-400 mt-1 text-xs shrink-0"></i>
+                                    <span>Executed end-to-end ETL/ELT pipelines processing enterprise telecommunication sales datasets (Vodafone) using Python and SQL.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-angle-right text-slate-400 mt-1 text-xs shrink-0"></i>
+                                    <span>Designed interactive <strong class="text-slate-900">Power BI dashboards</strong> to track business metrics, improving executive KPI tracking efficiency by <strong class="text-slate-900">15%</strong>.</span>
+                                </li>
+                            </ul>
+
+                            <div class="flex flex-wrap gap-2 pt-3 border-t border-slate-100">
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Python ETL</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">SQL</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Power BI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-20 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-mono uppercase tracking-widest text-blue-600 font-bold mb-2">Academic Foundation</h2>
+                    <p class="text-3xl font-bold text-slate-900 tracking-tight">Education &amp; Qualifications</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Master's Degree -->
+                    <div class="light-panel p-8 rounded-2xl border-slate-200 hover:border-blue-400 transition-all">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <span class="text-xs font-mono text-blue-600 font-bold uppercase">Master of Science (M.Sc.)</span>
+                                <h3 class="text-lg font-bold text-slate-900 mt-1">Internet of Things &amp; Smart Systems</h3>
+                                <p class="text-slate-600 text-xs">Westsächsische Hochschule Zwickau • <span class="text-slate-500">Zwickau, Germany</span></p>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-blue-50 text-blue-700 border border-blue-200 font-medium">
+                                Enrolled Student
+                            </span>
+                        </div>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            Focused on AIoT architecture, sensor telemetry networks, microcontrollers (ESP32), embedded hardware design, and intelligent automation systems. Seeking Master Thesis &amp; Industry positions.
+                        </p>
+                    </div>
+
+                    <!-- Bachelor's Degree -->
+                    <div class="light-panel p-8 rounded-2xl border-slate-200 hover:border-blue-400 transition-all">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <span class="text-xs font-mono text-slate-700 font-bold uppercase">Bachelor of Technology (B.Tech)</span>
+                                <h3 class="text-lg font-bold text-slate-900 mt-1">Electronics &amp; Communication Engineering</h3>
+                                <p class="text-slate-600 text-xs">Lovely Professional University • <span class="text-slate-500">Punjab, India</span></p>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-slate-100 text-slate-700 border border-slate-200 font-medium">
+                                Graduated
+                            </span>
+                        </div>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            Strong grounding in embedded systems, digital signal processing, communication networks, and mathematical modeling for data science.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Credentials Section (Strictly User Provided Only) -->
+        <section id="certifications" class="py-20 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-xs font-mono uppercase tracking-widest text-blue-600 font-bold mb-2">Verified Credentials</h2>
+                    <p class="text-3xl font-bold text-slate-900 tracking-tight">Certifications</p>
+                    <div class="w-12 h-1 bg-blue-600 mx-auto mt-3 rounded-full"></div>
+                </div>
+
+                <div class="max-w-5xl mx-auto grid sm:grid-cols-2 gap-6">
+                    <!-- Cert 1: Applied AI Lab: DL for Computer Vision (WorldQuant) -->
+                    <div class="light-panel p-6 rounded-2xl border-slate-200 hover:border-blue-400 transition-all group">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg font-bold border border-blue-100 shrink-0">
+                                <i class="fa-solid fa-eye"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Applied AI Lab: DL for Computer Vision</h3>
+                                <span class="text-xs font-mono text-slate-500">WorldQuant University</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-xs leading-relaxed">Deep Learning techniques, CNN architectures, object detection models, image segmentation, and CV pipeline development.</p>
+                        <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between text-[11px] font-mono text-blue-700">
+                            <span>Completed: Aug 2025</span>
+                            <span>Verified <i class="fa-solid fa-circle-check text-emerald-600 ml-1"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Cert 2: Applied Data Science Lab: ML (WorldQuant) -->
+                    <div class="light-panel p-6 rounded-2xl border-slate-200 hover:border-blue-400 transition-all group">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg font-bold border border-emerald-100 shrink-0">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Applied Data Science Lab: ML</h3>
+                                <span class="text-xs font-mono text-slate-500">WorldQuant University</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-xs leading-relaxed">End-to-end machine learning workflows, predictive modeling, statistical analysis, feature engineering, and model evaluation.</p>
+                        <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between text-[11px] font-mono text-emerald-700">
+                            <span>Completed: Jul 2025</span>
+                            <span>Verified <i class="fa-solid fa-circle-check text-emerald-600 ml-1"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Cert 3: Build AI Agents & Automate Workflows with n8n (LinkedIn Learning) -->
+                    <div class="light-panel p-6 rounded-2xl border-slate-200 hover:border-blue-400 transition-all group">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-lg font-bold border border-indigo-100 shrink-0">
+                                <i class="fa-solid fa-diagram-project"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Build AI Agents &amp; Automate Workflows with n8n</h3>
+                                <span class="text-xs font-mono text-slate-500">LinkedIn Learning • Morten Rand-Hendriksen</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-xs leading-relaxed">Multi-agent AI orchestration, automated workflow pipelines using n8n, tool integration, and LLM-driven autonomous task execution.</p>
+                        <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between text-[11px] font-mono text-indigo-700">
+                            <span>Completed: Nov 17, 2025</span>
+                            <span>Verified <i class="fa-solid fa-circle-check text-emerald-600 ml-1"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Cert 4: Fine-Tune Your LLMs (LinkedIn Learning) -->
+                    <div class="light-panel p-6 rounded-2xl border-slate-200 hover:border-blue-400 transition-all group">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-lg font-bold border border-slate-200 shrink-0">
+                                <i class="fa-solid fa-sliders"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Fine-Tune Your LLMs</h3>
+                                <span class="text-xs font-mono text-slate-500">LinkedIn Learning • Kesha Williams</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-xs leading-relaxed">Parameter-efficient fine-tuning (PEFT/LoRA), domain adaptation techniques, dataset formatting, and evaluation of large language models.</p>
+                        <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between text-[11px] font-mono text-slate-700">
+                            <span>Completed: Nov 17, 2025</span>
+                            <span>Verified <i class="fa-solid fa-circle-check text-emerald-600 ml-1"></i></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section id="projects" class="py-20 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                    <div>
+                        <h2 class="text-xs font-mono uppercase tracking-widest text-blue-600 font-bold mb-2">Portfolio Showcase</h2>
+                        <p class="text-3xl font-bold text-slate-900 tracking-tight">Featured Engineering Projects</p>
+                    </div>
+
+                    <!-- Project Category Filter -->
+                    <div class="flex flex-wrap gap-2" id="projectFilterNav">
+                        <button class="proj-filter-btn active px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white shadow-sm transition-all" data-filter="all">All</button>
+                        <button class="proj-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 hover:text-slate-900 border border-slate-200 transition-all" data-filter="cv">ROS2 &amp; Computer Vision</button>
+                        <button class="proj-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 hover:text-slate-900 border border-slate-200 transition-all" data-filter="genai">GenAI &amp; Agents</button>
+                        <button class="proj-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 hover:text-slate-900 border border-slate-200 transition-all" data-filter="timeseries">Time-Series &amp; IoT</button>
+                        <button class="proj-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 hover:text-slate-900 border border-slate-200 transition-all" data-filter="ml">ML &amp; Analytics</button>
+                    </div>
+                </div>
+
+                <!-- Projects Cards Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
+
+                    <!-- Project Card Spotlight: Ubica Robotics ROS2 Case Study -->
+                    <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="cv">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-blue-50 text-blue-700 border border-blue-200 font-medium">Ubica Robotics Case Study</span>
+                                <span class="text-xs font-mono text-slate-500">Mar – Aug 2026</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">ROS2 Retail Shelf Perception &amp; OOS Pipeline</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                Engineered real-time ROS2 perception logic for retail robots to identify Out-of-Shelf products, boosting Precision to 92% and Recall to 89% with automated ground-truth evaluation tools.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">ROS2 Middleware</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Colcon Build/Test</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Python Metric Eval</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">GitLab MRs</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-emerald-700 font-mono font-medium"><i class="fa-solid fa-arrow-trend-up mr-1"></i> Precision 85% → 92%</span>
+                            <button onclick="openProjectModal('ubica-perception')" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                                Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2: Smart Water Meter Predictive Maintenance -->
+                    <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="ml">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-amber-50 text-amber-800 border border-amber-200 font-medium">Predictive Maintenance</span>
+                                <span class="text-xs font-mono text-slate-500">2025</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Smart Water Meter Predictive Maintenance</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                Deployed Streamlit app predicting connectivity failure (DSR &lt; 85%) for smart water meters using Random Forest &amp; XGBoost, reducing unplanned maintenance costs by &gt;20%.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Streamlit</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">XGBoost</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Random Forest</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-amber-700 font-mono font-medium"><i class="fa-solid fa-wrench mr-1"></i> &gt;20% Cost Reduction</span>
+                            <button onclick="openProjectModal('smart-meter-pdm')" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                                Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3: Medical Q&A Chatbot (RAG) -->
+                    <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="genai">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-indigo-50 text-indigo-700 border border-indigo-200 font-medium">GenAI &amp; RAG</span>
+                                <span class="text-xs font-mono text-slate-500">2025</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Medical Q&amp;A Chatbot (RAG)</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                End-to-end AI medical chatbot retrieving domain-specific answers from medical PDFs using LangChain, Pinecone vector embeddings, Flask API, Docker, and AWS EC2.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">LangChain</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Pinecone</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">AWS EC2</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-emerald-700 font-mono font-medium"><i class="fa-solid fa-check-circle mr-1"></i> CI/CD Deployed</span>
+                            <button onclick="openProjectModal('rag-medical')" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                                Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4: Istanbul Traffic Object Detection -->
+                    <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="cv">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-blue-50 text-blue-700 border border-blue-200 font-medium">Computer Vision</span>
+                                <span class="text-xs font-mono text-slate-500">Real-Time</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Istanbul Traffic Object Detection</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                Real-time traffic tracking using YOLOv8n, PyTorch, and OpenCV to identify vehicles &amp; pedestrians from street video, reducing computational load by 30%.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">YOLOv8n</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">PyTorch</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">OpenCV</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-blue-600 font-mono font-medium"><i class="fa-solid fa-bolt mr-1"></i> 30% Comp Reduction</span>
+                            <button onclick="openProjectModal('traffic-yolo')" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                                Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 5: IoT Weather Station & Voice-Integrated Home Automation -->
+                    <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="timeseries">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-emerald-50 text-emerald-700 border border-emerald-200 font-medium">IoT &amp; Embedded</span>
+                                <span class="text-xs font-mono text-blue-600 font-medium">Master's Project</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">IoT Weather Station &amp; Voice Automation</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                ESP32 environmental station with custom PCB, 3D-printed wind/rain mechanical sensors (Hall Effect), ESPHome firmware, local Home Assistant VM, and a custom Python voice assistant.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">ESP32</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">ESPHome</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Home Assistant</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-emerald-700 font-mono font-medium"><i class="fa-solid fa-microchip mr-1"></i> ESP32 + PCB + Voice</span>
+                            <button onclick="openProjectModal('iot-weather')" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                                Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 6: Face Recognition on Video Footage -->
+                    <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="cv">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-blue-50 text-blue-700 border border-blue-200 font-medium">Computer Vision</span>
+                                <span class="text-xs font-mono text-slate-500">Video Analytics</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Face Recognition on Video Footage</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                Facial detection &amp; recognition pipeline using MTCNN and Inception-ResNet V1 to automatically track celebrity appearances in Oscar award ceremony footage.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">MTCNN</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Inception-ResNet V1</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">OpenCV</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-indigo-700 font-mono font-medium"><i class="fa-solid fa-user-check mr-1"></i> Facial Embeddings</span>
+                            <button onclick="openProjectModal('face-rec')" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                                Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Portfolio AI Assistant -->
+        <section id="assistant" class="py-20 bg-white border-b border-slate-200 relative">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200 text-xs font-mono font-medium mb-3">
+                        <i class="fa-solid fa-sparkles text-blue-600"></i> Interactive Demo
+                    </span>
+                    <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Ask My AI Portfolio Assistant</h2>
+                    <p class="text-slate-600 text-xs mt-2">Query my recent experience at Ubica Robotics, ROS2 perception pipelines, thesis availability, skills, or certifications instantly.</p>
+                </div>
+
+                <div class="light-panel rounded-2xl border-slate-200 overflow-hidden shadow-sm">
+                    <!-- Chat Header -->
+                    <div class="bg-slate-900 px-6 py-4 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+                            <span class="font-mono text-xs text-white font-medium">Ubica_Perception_Assistant_v3.2 [Active]</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="clearChat()" class="text-xs font-mono text-slate-300 hover:text-white px-2 py-1 rounded bg-slate-800">Clear</button>
+                        </div>
+                    </div>
+
+                    <!-- Chat Box Body -->
+                    <div id="chatMessages" class="p-6 h-80 overflow-y-auto space-y-4 font-mono text-xs leading-relaxed bg-slate-50/50">
+                        <div class="flex items-start gap-3">
+                            <div class="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-xs shrink-0 font-bold">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <div class="bg-white border border-slate-200 p-4 rounded-xl text-slate-700 max-w-xl shadow-sm">
+                                Hello! I am the portfolio assistant trained on my experience at <strong>Ubica Robotics</strong>, AI certifications, and prior AI/IoT roles. Ask me questions like:
+                                <ul class="list-disc list-inside mt-2 text-blue-700 space-y-1">
+                                    <li>"What did you do at Ubica Robotics?"</li>
+                                    <li>"Tell me about your WorldQuant AI &amp; ML certifications."</li>
+                                    <li>"What ROS2 and n8n AI agent experience do you have?"</li>
+                                    <li>"Are you open for Master Thesis positions?"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Suggested Prompts -->
+                    <div class="px-6 py-3 bg-white border-t border-slate-200 flex flex-wrap gap-2 text-xs">
+                        <span class="text-slate-500 font-mono py-1">Quick Prompts:</span>
+                        <button onclick="sendQuickPrompt('Tell me about your work at Ubica Robotics')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">Ubica Robotics Work</button>
+                        <button onclick="sendQuickPrompt('What AI and Data Science certifications do you hold?')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">Certifications</button>
+                        <button onclick="sendQuickPrompt('How did you improve the Out of Shelf product detection metrics?')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-emerald-700 border border-slate-200">Metrics Boost (85% to 92%)</button>
+                        <button onclick="sendQuickPrompt('Are you looking for Master Thesis or full-time roles?')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-blue-700 border border-slate-200">Thesis &amp; Job Search</button>
+                    </div>
+
+                    <!-- Chat Input -->
+                    <div class="p-4 bg-white border-t border-slate-200 flex gap-3">
+                        <input type="text" id="chatInput" placeholder="Type a question about Ubica Robotics, ROS2, thesis search, or certifications..." class="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-500 font-mono">
+                        <button onclick="sendMessage()" class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-600 text-white font-bold text-xs font-mono transition-all flex items-center gap-1.5 shadow-sm">
+                            Send <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="max-w-2xl mx-auto space-y-6">
+                    <h2 class="text-xs font-mono uppercase tracking-widest text-blue-600 font-bold">Let's Connect</h2>
+                    <h3 class="text-3xl font-bold text-slate-900 tracking-tight">Open for Master Thesis &amp; AI / Robotics Roles</h3>
+                    <p class="text-slate-600 text-xs">Feel free to reach out for thesis opportunities, research collaboration, or engineering roles in AIoT, Robotic Perception, Computer Vision, and Data Science.</p>
+
+                    <div class="flex flex-wrap justify-center gap-4 pt-4">
+                        <a href="https://www.linkedin.com/in/saijaya-rami-reddy-chilekampalli-71b175170/" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-md transition-all flex items-center gap-2">
+                            <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+                        </a>
+                        <a href="https://github.com/sac23nht" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm shadow-md transition-all flex items-center gap-2">
+                            <i class="fa-brands fa-github"></i> View GitHub Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
+            <p>© 2026 Saijaya Rami Reddy Chilekampalli. AIoT &amp; Robotic Perception Engineer.</p>
+            <div class="flex items-center gap-5">
+                <a href="https://github.com/sac23nht" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 transition-colors flex items-center gap-1.5">
+                    <i class="fa-brands fa-github text-sm"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/saijaya-rami-reddy-chilekampalli-71b175170/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 transition-colors flex items-center gap-1.5">
+                    <i class="fa-brands fa-linkedin text-sm"></i> LinkedIn
+                </a>
+                <a href="#hero" class="hover:text-blue-600 transition-colors ml-2">Back to top ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Details Modal -->
+    <div id="projectModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-slate-200 p-6 sm:p-8 space-y-6 relative shadow-2xl">
+            <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl p-2">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div id="modalContent">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Live Theme Selector Logic
+        function setTheme(themeName) {
+            document.documentElement.setAttribute('data-theme', themeName);
+            localStorage.setItem('portfolio-theme', themeName);
+            
+            // Highlight active theme button
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('ring-2', 'ring-blue-400/50');
+            });
+            const selectedBtn = document.querySelector(`.theme-btn[onclick="setTheme('${themeName}')"]`);
+            if (selectedBtn) {
+                selectedBtn.classList.add('ring-2', 'ring-blue-400/50');
+            }
+        }
+
+        // Initialize Theme from localStorage or default to 'soft-slate'
+        const savedTheme = localStorage.getItem('portfolio-theme') || 'soft-slate';
+        setTheme(savedTheme);
+
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Projects Category Filtering Logic
+        const projFilterNav = document.querySelectorAll('.proj-filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        projFilterNav.forEach(btn => {
+            btn.addEventListener('click', () => {
+                projFilterNav.forEach(b => {
+                    b.classList.remove('bg-blue-600', 'text-white', 'shadow-sm');
+                    b.classList.add('bg-white', 'text-slate-600');
+                });
+                btn.classList.remove('bg-white', 'text-slate-600');
+                btn.classList.add('bg-blue-600', 'text-white', 'shadow-sm');
+
+                const filter = btn.dataset.filter;
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Detailed Project Modal Data
+        const projectDetails = {
+            'ubica-perception': {
+                title: 'ROS2 Retail Shelf Perception & OOS Pipeline (Ubica Robotics)',
+                tech: 'ROS2, Python, Retail CV, Colcon, Unit Testing, GitLab CI/MRs',
+                bullets: [
+                    'Architected high-efficiency computer vision pipelines on the ROS2 framework for real-time analysis of retail shelves and products.',
+                    'Engineered new scenario detection logic that handled unseen retail store edge cases, driving Out-of-Shelf (OOS) Precision from 85% to 92% and Recall from 79% to 89%.',
+                    'Deployed algorithms onto mobile scanning robots, tracking execution across navigation goal states and testbench runs.',
+                    'Developed automated Python evaluation scripts to compute TP, FP, FN, Precision, and Recall metrics from ground-truth CSV data.',
+                    'Created comprehensive unit tests executed via colcon build/test and actively participated in GitLab code reviews and Merge Requests.'
+                ]
+            },
+            'smart-meter-pdm': {
+                title: 'Predictive Maintenance for Smart Water Meters',
+                tech: 'Streamlit, XGBoost, Random Forest, Python, Scikit-Learn',
+                bullets: [
+                    'Developed and deployed a Streamlit application to predict connectivity failure (DSR < 85%) for smart water meters.',
+                    'Identified RSSI, SNR, and Cast Iron lid types as primary risk factors impacting meter telemetry reliability.',
+                    'Proactive PdM intervention strategy reduces unplanned maintenance costs by over 20%.'
+                ]
+            },
+            'rag-medical': {
+                title: 'Medical Chatbot using LLMs (RAG)',
+                tech: 'LangChain, Pinecone, Flask, AWS EC2, Docker, HuggingFace',
+                bullets: [
+                    'Built an end-to-end AI medical chatbot using Retrieval-Augmented Generation (RAG) with LLMs.',
+                    'Implemented PDF parsing, vector embeddings with Pinecone, and fast cosine similarity retrieval.',
+                    'Containerized application with Docker and deployed on AWS EC2 with GitHub Actions CI/CD.'
+                ]
+            },
+            'traffic-yolo': {
+                title: 'Istanbul Traffic Object Detection',
+                tech: 'Python, YOLOv8n, PyTorch, OpenCV, Albumentations',
+                bullets: [
+                    'Developed real-time object detection system using lightweight YOLOv8n to identify vehicles and pedestrians.',
+                    'Applied Albumentations image augmentations to improve detection under adverse lighting.',
+                    'Reduced computational overhead by 30% while maintaining target accuracy.'
+                ]
+            },
+            'face-rec': {
+                title: 'Face Recognition & Tracking on Video Footage',
+                tech: 'Python, MTCNN, Inception-ResNet V1, OpenCV, PyTorch',
+                bullets: [
+                    'Built an end-to-end facial recognition pipeline for processing video streams.',
+                    'Utilized MTCNN for face detection and Inception-ResNet V1 for extracting 512-dimensional face embeddings.'
+                ]
+            },
+            'iot-weather': {
+                title: 'IoT Weather Station & Voice-Integrated Home Automation System',
+                tech: 'ESP32, ESPHome, Home Assistant, Python, PCB Design, Hall Sensors',
+                bullets: [
+                    'Engineered an environmental station using an ESP32 microcontroller to track temperature, humidity, pressure, and wind.',
+                    'Designed custom PCB and 3D printed mechanical anemometer/rain assemblies.',
+                    'Deployed ESPHome YAML firmware integrated with local Home Assistant VM and custom Python voice commands.'
+                ]
+            }
+        };
+
+        function openProjectModal(id) {
+            const data = projectDetails[id];
+            if (!data) return;
+
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = `
+                <span class="text-xs font-mono text-blue-600 font-bold uppercase tracking-wider block mb-1">Detailed Case Breakdown</span>
+                <h3 class="text-xl font-bold text-slate-900 mb-1">${data.title}</h3>
+                <p class="text-xs font-mono text-slate-500 mb-4">${data.tech}</p>
+                <div class="h-px bg-slate-100 my-4"></div>
+                <ul class="space-y-3 text-slate-600 text-xs leading-relaxed mb-6">
+                    ${data.bullets.map(bullet => `<li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-emerald-600 mt-0.5 text-xs"></i><span>${bullet}</span></li>`).join('')}
+                </ul>
+                <div class="flex justify-end pt-2">
+                    <button onclick="closeProjectModal()" class="px-5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-mono text-xs font-bold">Close</button>
+                </div>
+            `;
+            document.getElementById('projectModal').classList.remove('hidden');
+        }
+
+        function closeProjectModal() {
+            document.getElementById('projectModal').classList.add('hidden');
+        }
+
+        // AI Portfolio Assistant Chatbot Knowledge Base
+        const knowledgeBase = [
+            { keywords: ['linkedin', 'contact', 'connect', 'profile', 'reach out'], answer: 'You can connect with Saijaya Rami Reddy Chilekampalli on LinkedIn at: <a href="https://www.linkedin.com/in/saijaya-rami-reddy-chilekampalli-71b175170/" target="_blank" class="text-blue-600 underline font-bold">linkedin.com/in/saijaya-rami-reddy-chilekampalli-71b175170/</a>' },
+            { keywords: ['github', 'code', 'repo', 'repository', 'projects'], answer: 'Check out the GitHub profile and code repositories at: <a href="https://github.com/sac23nht" target="_blank" class="text-blue-600 underline font-bold">github.com/sac23nht</a>' },
+            { keywords: ['ubica', 'robotics', 'working student', 'perception', 'shelf', 'retail', 'oos', 'out of shelf'], answer: 'At Ubica Robotics (Bremen, Germany), I served as a Working Student in the Perception Team (Mar 2026 – Aug 2026). I built efficient computer vision pipelines on ROS2 to understand retail environments, increasing Out-of-Shelf product detection Precision from 85% to 92% and Recall from 79% to 89%.' },
+            { keywords: ['ros', 'ros2', 'robot', 'colcon', 'testbench', 'goal'], answer: 'In ROS2, I integrated computer vision perception pipelines on mobile retail robots, triggering goal execution, stage verification, and metric evaluation on testbenches. I also authored unit tests using colcon build/test and built Python automated scripts to evaluate ground truth metrics (TP, FP, FN, Precision, Recall).' },
+            { keywords: ['metric', 'precision', 'recall', '85', '92', '79', '89', 'script'], answer: 'For retail shelf Out-of-Shelf product identification at Ubica Robotics, I designed new scenario logics that boosted Precision from 85% to 92% and Recall from 79% to 89%. I also wrote automated Python scripts that parsed ground-truth CSVs to output TP, FP, FN, Precision, and Recall.' },
+            { keywords: ['certification', 'certifications', 'worldquant', 'n8n', 'fine-tune', 'llm', 'cert'], answer: 'My certifications include: 1) Applied AI Lab: Deep Learning for Computer Vision (WorldQuant University, Aug 2025), 2) Applied Data Science Lab: Machine Learning (WorldQuant University, Jul 2025), 3) Build AI Agents & Automate Workflows with n8n (LinkedIn Learning, Nov 17, 2025), and 4) Fine-Tune Your LLMs (LinkedIn Learning, Nov 17, 2025).' },
+            { keywords: ['gitlab', 'git', 'pull', 'merge', 'mr', 'branch', 'bug'], answer: 'I used GitLab for version control at Ubica Robotics: creating branches, issuing Merge Requests (MRs), rebasing/pulling main to keep code current, debugging existing codebase algorithms to fix edge-case bugs, and maintaining production-ready ROS2 code.' },
+            { keywords: ['thesis', 'internship', 'looking', 'opportunity', 'werkstudent', 'master thesis', 'job search', 'open'], answer: 'I am currently pursuing my M.Sc. in IoT & Smart Systems at Westsächsische Hochschule Zwickau (WHZ), Germany. With experience across Ubica Robotics, GalaxE Solutions, and TCS, I am actively seeking Master Thesis positions or full-time opportunities in AIoT, Robotic Perception, Computer Vision, and Machine Learning.' },
+            { keywords: ['master', 'study', 'education', 'zwickau', 'degree', 'university', 'whz'], answer: 'I am currently doing my M.Sc. in Internet of Things & Smart Systems at Westsächsische Hochschule Zwickau, Germany. My coursework covers AIoT architectures, microcontrollers (ESP32), embedded systems, sensor telemetry, and intelligent automation.' },
+            { keywords: ['weather', 'iot', 'esp32', 'home assistant', 'sensor', 'pcb', '3d print'], answer: 'During my Master’s, I engineered an IoT Weather Station & Voice Home Automation System featuring an ESP32 with custom PCB, 3D-printed anemometer & rain gauge using Hall Effect sensors (A3144), ESPHome firmware, local Home Assistant VM, and a custom Python voice assistant.' },
+            { keywords: ['skill', 'python', 'stack', 'tech', 'tool'], answer: 'Primary skills include ROS2, Colcon Unit Testing, Retail CV, Expert Python, PyTorch, XGBoost, Streamlit, YOLOv8, MTCNN/ResNet, LangChain, Pinecone, ESP32/ESPHome, Home Assistant, PCB Design, n8n Agents, LLM Fine-Tuning, FastAPI, Flask, SQL, AWS, Docker, GitLab, and Power BI.' },
+            { keywords: ['galaxe', 'surveillance', 'ppe'], answer: 'At GalaxE Solutions (Junior Data Scientist), I designed a YOLOv8 safety surveillance system reducing manual effort by 60% and achieved 92%+ precision for PPE compliance checks.' },
+            { keywords: ['tcs', 'tata', 'analyst', 'vodafone'], answer: 'At TCS (Junior Data Analyst), I executed ETL processes on Vodafone sales data using Python/SQL and created Power BI dashboards.' }
+        ];
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            appendUserMessage(text);
+            input.value = '';
+
+            setTimeout(() => {
+                const response = getBotResponse(text);
+                appendBotMessage(response);
+            }, 300);
+        }
+
+        function sendQuickPrompt(text) {
+            document.getElementById('chatInput').value = text;
+            sendMessage();
+        }
+
+        function appendUserMessage(text) {
+            const container = document.getElementById('chatMessages');
+            const msgHtml = `
+                <div class="flex items-start justify-end gap-3">
+                    <div class="bg-blue-600 text-white p-3 rounded-xl max-w-xl shadow-sm">
+                        ${escapeHtml(text)}
+                    </div>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', msgHtml);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function appendBotMessage(text) {
+            const container = document.getElementById('chatMessages');
+            const msgHtml = `
+                <div class="flex items-start gap-3">
+                    <div class="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-xs shrink-0 font-bold">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="bg-white border border-slate-200 p-3 rounded-xl text-slate-700 max-w-xl shadow-sm">
+                        ${text}
+                    </div>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', msgHtml);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function getBotResponse(query) {
+            const q = query.toLowerCase();
+            for (let kb of knowledgeBase) {
+                if (kb.keywords.some(kw => q.includes(kw))) {
+                    return kb.answer;
+                }
+            }
+            return "I am trained on this portfolio! Ask me about my Working Student role at Ubica Robotics, ROS2 pipelines, WorldQuant & LinkedIn Learning certifications, Master Thesis search, or previous work at GalaxE and TCS.";
+        }
+
+        function clearChat() {
+            document.getElementById('chatMessages').innerHTML = `
+                <div class="flex items-start gap-3">
+                    <div class="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-xs shrink-0 font-bold">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="bg-white border border-slate-200 p-3 rounded-xl text-slate-700 max-w-xl shadow-sm">
+                        Chat reset. Ask me anything about Ubica Robotics, ROS2, thesis search, experience, or certifications!
+                    </div>
+                </div>
+            `;
+        }
+
+        function escapeHtml(str) {
+            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+
+        function copyToClipboard(text) {
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            alert('Copied to clipboard: ' + text);
+        }
+
+        // Enable Enter Key on Chat Input
+        document.getElementById('chatInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>
