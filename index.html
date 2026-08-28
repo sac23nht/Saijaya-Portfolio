@@ -51,10 +51,11 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Optimize Image Sharpness & Contrast */
+        /* Optimize Image Sharpness & Centering */
         .crisp-img {
             image-rendering: -webkit-optimize-contrast;
             image-rendering: crisp-edges;
+            object-position: center 20%;
             transform: translateZ(0);
             backface-visibility: hidden;
         }
@@ -150,17 +151,17 @@
                 <div class="grid md:grid-cols-12 gap-12 items-center">
                     
                     <div class="md:col-span-7 space-y-6 text-center md:text-left">
-                        <div class="flex flex-col sm:flex-row items-center md:items-start gap-5">
-                            <!-- High-DPI Crisp Profile Avatar -->
-                            <div class="relative group shrink-0">
-                                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl p-1 bg-white border border-slate-200 shadow-lg ring-4 ring-blue-500/10 group-hover:scale-105 transition-all duration-300">
-                                    <img src="Chilekampalli updated.jpg" alt="Saijaya Rami Reddy Chilekampalli" class="w-full h-full rounded-xl object-cover crisp-img" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1e293b/ffffff?text=Saijaya+Rami+Reddy'">
+                        <div class="flex flex-col sm:flex-row items-center md:items-center gap-5 justify-center md:justify-start">
+                            <!-- High-DPI Centered Sharp Profile Avatar -->
+                            <div class="relative group shrink-0 mx-auto sm:mx-0">
+                                <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full p-1.5 bg-white border border-slate-200 shadow-xl ring-4 ring-blue-500/10 group-hover:scale-105 transition-all duration-300 overflow-hidden flex items-center justify-center">
+                                    <img src="Chilekampalli updated.png" alt="Saijaya Rami Reddy Chilekampalli" class="w-full h-full rounded-full object-cover crisp-img" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1e293b/ffffff?text=Saijaya+Rami+Reddy'">
                                 </div>
-                                <div class="absolute -bottom-2 -right-2 bg-emerald-500 text-white text-[10px] p-1.5 rounded-lg shadow-md border-2 border-white flex items-center gap-1 font-bold" title="Available for thesis & roles">
+                                <div class="absolute bottom-0 right-1 bg-emerald-500 text-white text-[10px] p-1.5 rounded-full shadow-md border-2 border-white flex items-center gap-1 font-bold" title="Available for thesis & roles">
                                     <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span> Open
                                 </div>
                             </div>
-                            <div class="space-y-1.5">
+                            <div class="space-y-1.5 text-center sm:text-left">
                                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-mono font-medium">
                                     <span class="w-2 h-2 rounded-full bg-blue-500"></span>
                                     Recent Role: Working Student @ Ubica Robotics
@@ -176,14 +177,14 @@
                         </h1>
 
                         <p class="text-slate-600 text-base max-w-2xl leading-relaxed">
-                            M.Sc. IoT &amp; Smart Systems student with 3+ years of experience across <strong class="text-slate-900">Ubica Robotics (ROS2 Perception)</strong>, <strong class="text-slate-900">GalaxE Solutions (YOLOv8 CV)</strong>, and <strong class="text-slate-900">TCS (Data Analytics)</strong>. Specialized in computer vision pipelines, autonomous retail shelf scanning, predictive maintenance, and MLOps.
+                            M.Sc. IoT &amp; Smart Systems student with 3+ years of experience across <strong class="text-slate-900">Ubica Robotics (ROS2 Perception)</strong>, <strong class="text-slate-900">GalaxE Solutions (YOLOv8 CV)</strong>, and <strong class="text-slate-900">TCS (Data Analytics)</strong>. Specialized in computer vision pipelines, IoT telemetry (LoRaWAN, MQTT, TCP/IP), predictive maintenance, and MLOps.
                         </p>
 
                         <!-- Highlights Quick Badges -->
                         <div class="flex flex-wrap gap-2 pt-1 justify-center md:justify-start">
                             <span class="px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-mono text-slate-700 shadow-sm"><i class="fa-solid fa-robot mr-1.5 text-blue-600"></i> Ubica Robotics (Bremen)</span>
                             <span class="px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-mono text-emerald-700 shadow-sm"><i class="fa-solid fa-chart-line mr-1.5 text-emerald-600"></i> Precision 85% → 92%</span>
-                            <span class="px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-mono text-slate-700 shadow-sm"><i class="fa-solid fa-graduation-cap mr-1.5 text-slate-600"></i> M.Sc. IoT @ WHZ</span>
+                            <span class="px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-mono text-slate-700 shadow-sm"><i class="fa-solid fa-wifi mr-1.5 text-indigo-600"></i> LoRaWAN / MQTT / Node-RED</span>
                             <span class="px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-mono text-blue-700 shadow-sm"><i class="fa-solid fa-brain mr-1.5 text-blue-600"></i> ROS2 / Colcon / PyTorch</span>
                         </div>
 
@@ -211,7 +212,7 @@
                                         <div class="w-3 h-3 rounded-full bg-slate-300"></div>
                                         <div class="w-3 h-3 rounded-full bg-slate-300"></div>
                                     </div>
-                                    <span class="font-mono text-xs text-slate-400">profile: perception_engineer.json</span>
+                                    <span class="font-mono text-xs text-slate-400">profile: perception_aiot.json</span>
                                 </div>
 
                                 <!-- Metric Counters -->
@@ -379,10 +380,10 @@
                         </div>
 
                         <p class="text-slate-600 text-base leading-relaxed space-y-4">
-                            Currently pursuing my <strong>Master’s degree in Internet of Things (IoT) and Smart Systems</strong> at Westsächsische Hochschule Zwickau, Germany, I combine advanced academic research in sensor telemetry and embedded microcontrollers with over <strong>3 years of experience</strong> across industry and robotics teams. 
+                            Currently pursuing my <strong>Master’s degree in Internet of Things (IoT) and Smart Systems</strong> at Westsächsische Hochschule Zwickau, Germany, I combine advanced academic research in sensor telemetry, embedded microcontrollers, and communication protocols (LoRaWAN, MQTT, TCP/IP) with over <strong>3 years of experience</strong> across industry and robotics teams. 
                             Most recently, as a <strong>Working Student in the Perception Team at Ubica Robotics</strong>, I engineered high-efficiency computer vision pipelines on the <strong>ROS2 framework</strong> to analyze retail environments, boosting Out-of-Shelf product identification precision from 85% to 92% and recall from 79% to 89%. 
-                            My prior industry roles as a Data Scientist at <em>GalaxE Solutions</em> and Data Analyst at <em>Tata Consultancy Services (TCS)</em> provided strong grounding in real-time <strong>Computer Vision (YOLOv8, MTCNN)</strong>, <strong>Predictive Maintenance (XGBoost)</strong>, <strong>Generative AI (LangChain, n8n Agent Workflows, Fine-Tuning)</strong>, and MLOps deployments with AWS, Docker, FastAPI, and Streamlit. 
-                            Driven by a passion for connecting physical robotic hardware with intelligent computer vision, I am actively seeking compelling <strong>Master Thesis positions or full-time roles</strong> in <strong>AIoT, Robotic Perception, Computer Vision, and Machine Learning</strong>.
+                            My prior industry roles as a Data Scientist at <em>GalaxE Solutions</em> and Data Analyst at <em>Tata Consultancy Services (TCS)</em> provided strong grounding in real-time <strong>Computer Vision (YOLOv8, MTCNN)</strong>, <strong>Predictive Maintenance (XGBoost)</strong>, <strong>Generative AI (LangChain, n8n Agent Workflows, Fine-Tuning)</strong>, <strong>IoT Telemetry (Node-RED, InfluxDB, Grafana)</strong>, and MLOps deployments with AWS, Docker, FastAPI, and Streamlit. 
+                            Driven by a passion for connecting physical robotic hardware and IoT sensor nodes with intelligent algorithms, I am actively seeking compelling <strong>Master Thesis positions or full-time roles</strong> in <strong>AIoT, Robotic Perception, Computer Vision, and Machine Learning</strong>.
                         </p>
 
                         <!-- Key Pillars Grid -->
@@ -394,7 +395,7 @@
                                 <i class="fa-solid fa-graduation-cap"></i> M.Sc. IoT Student
                             </div>
                             <div class="flex items-center gap-2 text-emerald-700 font-semibold">
-                                <i class="fa-solid fa-microchip"></i> AIoT &amp; Embedded Systems
+                                <i class="fa-solid fa-wifi"></i> LoRaWAN / MQTT / Node-RED
                             </div>
                             <div class="flex items-center gap-2 text-slate-900 font-semibold">
                                 <i class="fa-solid fa-magnifying-glass"></i> Seeking Thesis &amp; Roles
@@ -417,29 +418,150 @@
 
                     <div class="light-panel p-6 rounded-2xl border-slate-200 hover:border-blue-400 transition-all group">
                         <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-lg mb-4 font-bold border border-indigo-100">
-                            <i class="fa-solid fa-brain"></i>
+                            <i class="fa-solid fa-wifi"></i>
                         </div>
-                        <h3 class="text-base font-bold text-slate-900 mb-2">Generative AI &amp; Agentic Workflows</h3>
+                        <h3 class="text-base font-bold text-slate-900 mb-2">IoT Systems &amp; Communication Protocols</h3>
                         <p class="text-slate-600 text-xs leading-relaxed">
-                            Building end-to-end RAG pipelines with LangChain &amp; Pinecone, fine-tuning LLMs, automating agent workflows with n8n, and generating image models with Stable Diffusion.
+                            Proficient in Node-RED workflow design, Grafana environmental monitoring, time-series telemetry in InfluxDB, ESP32 microcontrollers, and protocols (LoRaWAN, TCP/IP, MQTT, HTTP/REST).
                         </p>
                     </div>
 
                     <div class="light-panel p-6 rounded-2xl border-slate-200 hover:border-blue-400 transition-all group">
                         <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg mb-4 font-bold border border-emerald-100">
-                            <i class="fa-solid fa-chart-area"></i>
+                            <i class="fa-solid fa-brain"></i>
                         </div>
-                        <h3 class="text-base font-bold text-slate-900 mb-2">Predictive Maintenance &amp; Automated Testing</h3>
+                        <h3 class="text-base font-bold text-slate-900 mb-2">Generative AI, Agents &amp; Predictive ML</h3>
                         <p class="text-slate-600 text-xs leading-relaxed">
-                            Specialized in smart meter connectivity failure prediction (XGBoost/Streamlit), automated ground-truth metric generation scripts (TP/FP/FN), and unit testing with colcon.
+                            Building RAG pipelines with LangChain &amp; Pinecone, fine-tuning LLMs, agentic workflows with n8n, smart meter predictive maintenance (XGBoost), and model deployment.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Technical Skills Section -->
+        <section id="skills" class="py-20 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-mono uppercase tracking-widest text-blue-600 font-bold mb-2">Technical Matrix</h2>
+                    <p class="text-3xl font-bold text-slate-900 tracking-tight">Skills &amp; Technology Stack</p>
+                    <p class="text-slate-600 text-xs mt-2">Specialized skill set spanning IoT Telemetry, Computer Vision, Robotics, AI, and Cloud Infrastructure</p>
+                    <div class="w-12 h-1 bg-blue-600 mx-auto mt-3 rounded-full"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    
+                    <!-- Skill Group 1: IoT Systems, Hardware & Protocols -->
+                    <div class="light-panel p-6 sm:p-8 rounded-2xl border-slate-200 space-y-4 hover:border-blue-400 transition-all">
+                        <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                            <div class="w-9 h-9 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-base font-bold border border-indigo-100 shrink-0">
+                                <i class="fa-solid fa-wifi"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900">IoT Systems, Telemetry &amp; Protocols</h3>
+                                <p class="text-xs font-mono text-slate-500">Hardware, Dashboards &amp; Networking</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 bg-blue-50 text-blue-700 border border-blue-200 rounded-lg text-xs font-mono font-bold flex items-center gap-1.5"><i class="fa-solid fa-network-wired text-blue-600"></i> LoRaWAN</span>
+                            <span class="px-3 py-1.5 bg-blue-50 text-blue-700 border border-blue-200 rounded-lg text-xs font-mono font-bold flex items-center gap-1.5"><i class="fa-solid fa-server text-blue-600"></i> TCP / IP</span>
+                            <span class="px-3 py-1.5 bg-blue-50 text-blue-700 border border-blue-200 rounded-lg text-xs font-mono font-bold flex items-center gap-1.5"><i class="fa-solid fa-satellite-dish text-blue-600"></i> MQTT</span>
+                            <span class="px-3 py-1.5 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-lg text-xs font-mono font-bold flex items-center gap-1.5"><i class="fa-solid fa-diagram-project text-indigo-600"></i> Node-RED</span>
+                            <span class="px-3 py-1.5 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-lg text-xs font-mono font-bold flex items-center gap-1.5"><i class="fa-solid fa-chart-pie text-indigo-600"></i> Grafana</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">InfluxDB (Time-Series)</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">ESP32 Microcontrollers</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">ESPHome (YAML)</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">Home Assistant VM</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">Custom PCB Design (Gerber)</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">IoT Sensors (DHT22, BMP180, Hall Effect)</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">HTTP / REST APIs</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Group 2: Robotic Perception & Computer Vision -->
+                    <div class="light-panel p-6 sm:p-8 rounded-2xl border-slate-200 space-y-4 hover:border-blue-400 transition-all">
+                        <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                            <div class="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-base font-bold border border-blue-100 shrink-0">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900">Robotic Perception &amp; Computer Vision</h3>
+                                <p class="text-xs font-mono text-slate-500">ROS2, Deep Perception &amp; Video Analytics</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 bg-blue-50 text-blue-700 border border-blue-200 rounded-lg text-xs font-mono font-bold flex items-center gap-1.5"><i class="fa-solid fa-robot text-blue-600"></i> ROS 2 Middleware</span>
+                            <span class="px-3 py-1.5 bg-blue-50 text-blue-700 border border-blue-200 rounded-lg text-xs font-mono font-bold flex items-center gap-1.5"><i class="fa-solid fa-vial text-blue-600"></i> Colcon Build &amp; Test</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">Retail Shelf Perception</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">YOLOv8 &amp; YOLOv8n</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">OpenCV &amp; Albumentations</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">MTCNN &amp; Inception-ResNet V1</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">PyTorch Deep Learning</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">Facial Embedding Cosine Similarity</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-700 rounded-lg text-xs font-mono font-semibold">Precision &amp; Recall Metrics Eval</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Group 3: AI, GenAI & Predictive ML -->
+                    <div class="light-panel p-6 sm:p-8 rounded-2xl border-slate-200 space-y-4 hover:border-blue-400 transition-all">
+                        <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                            <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-base font-bold border border-emerald-100 shrink-0">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900">AI, Large Language Models &amp; Predictive ML</h3>
+                                <p class="text-xs font-mono text-slate-500">RAG, Agents, Fine-Tuning &amp; Forecasting</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-lg text-xs font-mono font-bold">LangChain RAG</span>
+                            <span class="px-3 py-1.5 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-lg text-xs font-mono font-bold">Pinecone Vector DB</span>
+                            <span class="px-3 py-1.5 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-lg text-xs font-mono font-bold">n8n Agent Workflows</span>
+                            <span class="px-3 py-1.5 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-lg text-xs font-mono font-bold">OpenAI GPT Fine-Tuning</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">LoRA Fine-Tuning</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">Stable Diffusion Transformers</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">XGBoost &amp; Random Forest</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">Scikit-Learn &amp; statsmodels</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">GARCH / ARCH Forecasting</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">ARIMA Time-Series</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Group 4: Cloud, Developer Tools & Analytics -->
+                    <div class="light-panel p-6 sm:p-8 rounded-2xl border-slate-200 space-y-4 hover:border-blue-400 transition-all">
+                        <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                            <div class="w-9 h-9 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-base font-bold border border-amber-100 shrink-0">
+                                <i class="fa-solid fa-cloud"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-slate-900">Cloud, MLOps &amp; Data Engineering</h3>
+                                <p class="text-xs font-mono text-slate-500">APIs, Databases, Cloud &amp; Dashboards</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">Python (Expert)</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">SQL &amp; SQLite</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">MongoDB &amp; JSON</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">AWS (S3, EC2, ECR)</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">Docker Containerization</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">FastAPI &amp; Flask APIs</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">Google Sheets API Automation</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">GitLab CI / GitHub Actions</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">Streamlit Web Apps</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-800 rounded-lg text-xs font-mono font-semibold">Power BI Dashboards</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <!-- Experience Section -->
-        <section id="experience" class="py-20 bg-white border-b border-slate-200">
+        <section id="experience" class="py-20 bg-slate-50 border-b border-slate-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="text-xs font-mono uppercase tracking-widest text-blue-600 font-bold mb-2">Career Journey</h2>
@@ -517,7 +639,7 @@
                         <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-slate-400 group-hover:scale-125 transition-all shadow-sm"></div>
                         
                         <div class="md:absolute md:-left-40 md:top-1 text-xs font-mono text-slate-500 font-bold mb-2 md:mb-0">
-                            Oct 2022 – Nov 2023
+                            Oct 2022 – May 2023
                         </div>
 
                         <div class="light-panel p-6 sm:p-8 rounded-2xl border-slate-200 hover:border-slate-400 transition-all">
@@ -560,7 +682,7 @@
                         <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-slate-400 group-hover:scale-125 transition-all shadow-sm"></div>
                         
                         <div class="md:absolute md:-left-40 md:top-1 text-xs font-mono text-slate-500 font-bold mb-2 md:mb-0">
-                            Jun 2021 – Apr 2023
+                            Jun 2021 – Oct 2022
                         </div>
 
                         <div class="light-panel p-6 sm:p-8 rounded-2xl border-slate-200 hover:border-slate-400 transition-all">
@@ -619,7 +741,7 @@
                             </span>
                         </div>
                         <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                            Focused on AIoT architecture, sensor telemetry networks, microcontrollers (ESP32), embedded hardware design, and intelligent automation systems. Seeking Master Thesis &amp; Industry positions.
+                            Focused on AIoT architecture, sensor telemetry networks, microcontrollers (ESP32), embedded hardware design, communication protocols (LoRaWAN, MQTT, TCP/IP), and intelligent automation systems. Seeking Master Thesis &amp; Industry positions.
                         </p>
                     </div>
 
@@ -748,10 +870,10 @@
                     </div>
                 </div>
 
-                <!-- Projects Cards Grid -->
+                <!-- Projects Cards Grid (Comprehensive List) -->
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
 
-                    <!-- Project Card Spotlight: Ubica Robotics ROS2 Case Study -->
+                    <!-- Project 1: Ubica Robotics ROS2 Case Study -->
                     <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="cv">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
@@ -763,10 +885,9 @@
                                 Engineered real-time ROS2 perception logic for retail robots to identify Out-of-Shelf products, boosting Precision to 92% and Recall to 89% with automated ground-truth evaluation tools.
                             </p>
                             <div class="flex flex-wrap gap-1.5 mb-4">
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">ROS2 Middleware</span>
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Colcon Build/Test</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">ROS2</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Colcon Testing</span>
                                 <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Python Metric Eval</span>
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">GitLab MRs</span>
                             </div>
                         </div>
                         <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
@@ -777,7 +898,157 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 2: Smart Water Meter Predictive Maintenance -->
+                    <!-- Project 2: AI-Powered Slackbot for Volunteer Management -->
+                    <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="genai">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-indigo-50 text-indigo-700 border border-indigo-200 font-medium">GenAI &amp; Automation</span>
+                                <span class="text-xs font-mono text-slate-500">Agentic AI</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">AI-Powered Slackbot for Volunteer Management</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                Conversational Slack bot processing natural language queries via OpenAI chat models to retrieve and update volunteer data in Google Sheets, orchestrating intent tools via API.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">OpenAI Chat</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Google Sheets API</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Slack Bot</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-indigo-700 font-mono font-medium"><i class="fa-solid fa-robot mr-1"></i> Intent Tool Agent</span>
+                            <button onclick="openProjectModal('slack-volunteer-bot')" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                                Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Fine-Tuned Customer Support Chatbot -->
+                    <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="genai">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-indigo-50 text-indigo-700 border border-indigo-200 font-medium">LLM Fine-Tuning</span>
+                                <span class="text-xs font-mono text-slate-500">Fine-Tuned GPT</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Fine-Tuned Customer Support Chatbot</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                Fine-tuned OpenAI GPT model on domain-specific support data for automated policy, shipping, and inquiry handling, reducing response latency and operational costs.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">OpenAI GPT Fine-Tuning</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Anonymization</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Low Latency</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-blue-600 font-mono font-medium"><i class="fa-solid fa-sliders mr-1"></i> Domain Adaptation</span>
+                            <button onclick="openProjectModal('finetuned-support')" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                                Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Face Detection & Recognition on Oscar Footage -->
+                    <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="cv">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-blue-50 text-blue-700 border border-blue-200 font-medium">Computer Vision</span>
+                                <span class="text-xs font-mono text-slate-500">Facial Recognition</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Face Recognition on Oscar Video Footage</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                Detected &amp; recognized Lupita Nyong’o and Christoph Waltz from award video streams using MTCNN face cropping and Inception-ResNet V1 512-D embeddings deployed in a Flask web app.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">MTCNN</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Inception-ResNet V1</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Flask Web App</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-indigo-700 font-mono font-medium"><i class="fa-solid fa-user-check mr-1"></i> Cosine Embeddings</span>
+                            <button onclick="openProjectModal('face-rec')" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                                Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Diffusion Meme & Real-Time Image Generator with LoRA -->
+                    <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="genai">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-indigo-50 text-indigo-700 border border-indigo-200 font-medium">GenAI Diffusion</span>
+                                <span class="text-xs font-mono text-slate-500">Streamlit &amp; LoRA</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Real-Time Diffusion Image Gen with LoRA</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                Interactive Streamlit app generating images from text prompts using Stable Diffusion v1.4, fine-tuned with LoRA weights on custom datasets with dynamic PIL text overlays.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Stable Diffusion</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">LoRA Fine-Tuning</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Streamlit</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-indigo-700 font-mono font-medium"><i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Latent Diffusion</span>
+                            <button onclick="openProjectModal('diffusion-lora')" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                                Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: Medical Q&A Chatbot (RAG) -->
+                    <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="genai">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-indigo-50 text-indigo-700 border border-indigo-200 font-medium">GenAI &amp; RAG</span>
+                                <span class="text-xs font-mono text-slate-500">AWS &amp; Docker</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Medical Q&amp;A Chatbot (RAG)</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                End-to-end AI medical chatbot retrieving domain-specific answers from medical PDFs using LangChain, Pinecone vector embeddings, Flask API, Docker, and AWS EC2.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">LangChain</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Pinecone</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">AWS EC2</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-emerald-700 font-mono font-medium"><i class="fa-solid fa-check-circle mr-1"></i> CI/CD Deployed</span>
+                            <button onclick="openProjectModal('rag-medical')" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                                Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 7: Stock Volatility Forecasting API -->
+                    <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="timeseries">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-emerald-50 text-emerald-700 border border-emerald-200 font-medium">Financial Time-Series</span>
+                                <span class="text-xs font-mono text-slate-500">GARCH / ARCH</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Stock Volatility Forecasting API using GARCH</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                Financial time-series prediction service modeling stock returns volatility clustering using ARCH/GARCH models, SQLite database, and RESTful prediction endpoints in FastAPI.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">FastAPI</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">GARCH / ARCH</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">SQLite</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-blue-600 font-mono font-medium"><i class="fa-solid fa-chart-line mr-1"></i> Volatility Clustering</span>
+                            <button onclick="openProjectModal('stock-garch')" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                                Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 8: Smart Water Meter Predictive Maintenance -->
                     <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="ml">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
@@ -802,57 +1073,57 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 3: Medical Q&A Chatbot (RAG) -->
-                    <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="genai">
+                    <!-- Project 9: Building Damage Severity Classification -->
+                    <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="ml">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
-                                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-indigo-50 text-indigo-700 border border-indigo-200 font-medium">GenAI &amp; RAG</span>
-                                <span class="text-xs font-mono text-slate-500">2025</span>
+                                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-amber-50 text-amber-800 border border-amber-200 font-medium">Disaster Response ML</span>
+                                <span class="text-xs font-mono text-slate-500">97% Accuracy</span>
                             </div>
-                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Medical Q&amp;A Chatbot (RAG)</h3>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Building Damage Severity Classification</h3>
                             <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                                End-to-end AI medical chatbot retrieving domain-specific answers from medical PDFs using LangChain, Pinecone vector embeddings, Flask API, Docker, and AWS EC2.
+                                End-to-end ML pipeline extracting structural data from SQLite, ordinal encoding features, and optimizing XGBoost via GridSearchCV to achieve 97% classification accuracy.
                             </p>
                             <div class="flex flex-wrap gap-1.5 mb-4">
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">LangChain</span>
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Pinecone</span>
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">AWS EC2</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">XGBoost</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">GridSearchCV</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">SQLite</span>
                             </div>
                         </div>
                         <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs text-emerald-700 font-mono font-medium"><i class="fa-solid fa-check-circle mr-1"></i> CI/CD Deployed</span>
-                            <button onclick="openProjectModal('rag-medical')" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                            <span class="text-xs text-emerald-700 font-mono font-medium"><i class="fa-solid fa-bullseye mr-1"></i> 97% Accuracy</span>
+                            <button onclick="openProjectModal('building-damage')" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
                                 Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
                             </button>
                         </div>
                     </div>
 
-                    <!-- Project Card 4: Istanbul Traffic Object Detection -->
-                    <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="cv">
+                    <!-- Project 10: IoT Air Quality Monitoring & Multi-City Visualization -->
+                    <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="timeseries">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
-                                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-blue-50 text-blue-700 border border-blue-200 font-medium">Computer Vision</span>
-                                <span class="text-xs font-mono text-slate-500">Real-Time</span>
+                                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-indigo-50 text-indigo-700 border border-indigo-200 font-medium">IoT Telemetry</span>
+                                <span class="text-xs font-mono text-slate-500">Node-RED &amp; Grafana</span>
                             </div>
-                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Istanbul Traffic Object Detection</h3>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">IoT Air Quality Monitoring &amp; Grafana Dashboards</h3>
                             <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                                Real-time traffic tracking using YOLOv8n, PyTorch, and OpenCV to identify vehicles &amp; pedestrians from street video, reducing computational load by 30%.
+                                Open-source IoT telemetry stack using Node-RED for API ingestion, InfluxDB for time-series storage, and multi-city Grafana dashboards tracking PM2.5, CO2, and air metrics.
                             </p>
                             <div class="flex flex-wrap gap-1.5 mb-4">
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">YOLOv8n</span>
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">PyTorch</span>
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">OpenCV</span>
+                                <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 rounded text-xs font-mono">Node-RED</span>
+                                <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 rounded text-xs font-mono">Grafana</span>
+                                <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 rounded text-xs font-mono">InfluxDB</span>
                             </div>
                         </div>
                         <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs text-blue-600 font-mono font-medium"><i class="fa-solid fa-bolt mr-1"></i> 30% Comp Reduction</span>
-                            <button onclick="openProjectModal('traffic-yolo')" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                            <span class="text-xs text-indigo-700 font-mono font-medium"><i class="fa-solid fa-wifi mr-1"></i> Telemetry Pipeline</span>
+                            <button onclick="openProjectModal('iot-air-quality')" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
                                 Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
                             </button>
                         </div>
                     </div>
 
-                    <!-- Project Card 5: IoT Weather Station & Voice-Integrated Home Automation -->
+                    <!-- Project 11: IoT Weather Station & Voice Automation -->
                     <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="timeseries">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
@@ -877,26 +1148,26 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 6: Face Recognition on Video Footage -->
+                    <!-- Project 12: Istanbul Traffic Object Detection -->
                     <div class="project-card light-panel rounded-2xl border-slate-200 hover:border-blue-400 transition-all flex flex-col justify-between overflow-hidden group" data-category="cv">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-blue-50 text-blue-700 border border-blue-200 font-medium">Computer Vision</span>
-                                <span class="text-xs font-mono text-slate-500">Video Analytics</span>
+                                <span class="text-xs font-mono text-slate-500">Real-Time</span>
                             </div>
-                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Face Recognition on Video Footage</h3>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Istanbul Traffic Object Detection</h3>
                             <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                                Facial detection &amp; recognition pipeline using MTCNN and Inception-ResNet V1 to automatically track celebrity appearances in Oscar award ceremony footage.
+                                Real-time traffic tracking using YOLOv8n, PyTorch, and OpenCV to identify vehicles &amp; pedestrians from street video, reducing computational load by 30%.
                             </p>
                             <div class="flex flex-wrap gap-1.5 mb-4">
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">MTCNN</span>
-                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">Inception-ResNet V1</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">YOLOv8n</span>
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">PyTorch</span>
                                 <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded text-xs font-mono">OpenCV</span>
                             </div>
                         </div>
                         <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs text-indigo-700 font-mono font-medium"><i class="fa-solid fa-user-check mr-1"></i> Facial Embeddings</span>
-                            <button onclick="openProjectModal('face-rec')" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                            <span class="text-xs text-blue-600 font-mono font-medium"><i class="fa-solid fa-bolt mr-1"></i> 30% Comp Reduction</span>
+                            <button onclick="openProjectModal('traffic-yolo')" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
                                 Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
                             </button>
                         </div>
@@ -914,7 +1185,7 @@
                         <i class="fa-solid fa-sparkles text-blue-600"></i> Interactive Demo
                     </span>
                     <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Ask My AI Portfolio Assistant</h2>
-                    <p class="text-slate-600 text-xs mt-2">Query my recent experience at Ubica Robotics, ROS2 perception pipelines, thesis availability, skills, or certifications instantly.</p>
+                    <p class="text-slate-600 text-xs mt-2">Query my recent experience at Ubica Robotics, ROS2 perception pipelines, IoT protocols (LoRaWAN, MQTT), thesis availability, or certifications instantly.</p>
                 </div>
 
                 <div class="light-panel rounded-2xl border-slate-200 overflow-hidden shadow-sm">
@@ -936,11 +1207,11 @@
                                 <i class="fa-solid fa-robot"></i>
                             </div>
                             <div class="bg-white border border-slate-200 p-4 rounded-xl text-slate-700 max-w-xl shadow-sm">
-                                Hello! I am the portfolio assistant trained on my experience at <strong>Ubica Robotics</strong>, AI certifications, and prior AI/IoT roles. Ask me questions like:
+                                Hello! I am the portfolio assistant trained on my experience at <strong>Ubica Robotics</strong>, AI Agent Slackbots, Fine-Tuned GPT models, face recognition (MTCNN), IoT communication protocols (LoRaWAN, MQTT, TCP/IP), Node-RED, Grafana, AI certifications, and prior AI/IoT roles. Ask me questions like:
                                 <ul class="list-disc list-inside mt-2 text-blue-700 space-y-1">
-                                    <li>"What is your email address?"</li>
+                                    <li>"Tell me about your AI Slackbot and fine-tuned GPT chatbots."</li>
+                                    <li>"How did face recognition work on Oscar video footage?"</li>
                                     <li>"What did you do at Ubica Robotics?"</li>
-                                    <li>"Tell me about your WorldQuant AI &amp; ML certifications."</li>
                                     <li>"Are you open for Master Thesis positions?"</li>
                                 </ul>
                             </div>
@@ -950,15 +1221,15 @@
                     <!-- Suggested Prompts -->
                     <div class="px-6 py-3 bg-white border-t border-slate-200 flex flex-wrap gap-2 text-xs">
                         <span class="text-slate-500 font-mono py-1">Quick Prompts:</span>
-                        <button onclick="sendQuickPrompt('How can I contact or email you?')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-emerald-700 border border-slate-200">Email Contact</button>
+                        <button onclick="sendQuickPrompt('Tell me about your AI-powered Slackbot for volunteer management')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-indigo-700 border border-slate-200">AI Slackbot</button>
+                        <button onclick="sendQuickPrompt('How did you fine-tune OpenAI GPT for customer support?')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-blue-700 border border-slate-200">Fine-Tuned GPT</button>
                         <button onclick="sendQuickPrompt('Tell me about your work at Ubica Robotics')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">Ubica Robotics Work</button>
-                        <button onclick="sendQuickPrompt('What AI and Data Science certifications do you hold?')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">Certifications</button>
-                        <button onclick="sendQuickPrompt('Are you looking for Master Thesis or full-time roles?')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-blue-700 border border-slate-200">Thesis &amp; Job Search</button>
+                        <button onclick="sendQuickPrompt('Are you looking for Master Thesis or full-time roles?')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-emerald-700 border border-slate-200">Thesis &amp; Job Search</button>
                     </div>
 
                     <!-- Chat Input -->
                     <div class="p-4 bg-white border-t border-slate-200 flex gap-3">
-                        <input type="text" id="chatInput" placeholder="Type a question about Ubica Robotics, ROS2, thesis search, or certifications..." class="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-500 font-mono">
+                        <input type="text" id="chatInput" placeholder="Type a question about Ubica Robotics, Slackbot, Fine-Tuned GPT, face recognition, thesis search..." class="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-500 font-mono">
                         <button onclick="sendMessage()" class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-600 text-white font-bold text-xs font-mono transition-all flex items-center gap-1.5 shadow-sm">
                             Send <i class="fa-solid fa-paper-plane"></i>
                         </button>
@@ -1075,6 +1346,80 @@
                     'Created comprehensive unit tests executed via colcon build/test and actively participated in GitLab code reviews and Merge Requests.'
                 ]
             },
+            'slack-volunteer-bot': {
+                title: 'AI-Powered Slackbot for Volunteer Management',
+                tech: 'OpenAI Chat Models, Google Sheets API, Agent Tools, Automation',
+                bullets: [
+                    'Built an AI-powered Slack bot that processes natural language queries to retrieve and update volunteer data stored in Google Sheets.',
+                    'Designed agent-based workflow using OpenAI chat models to interpret user intent (information request, update, or out-of-scope).',
+                    'Integrated automation platform to orchestrate data operations between Slack and Google Sheets.',
+                    'Implemented tools for both read and write operations on spreadsheet data via API.',
+                    'Enabled non-technical users to interact with structured data using conversational language, reducing manual data lookup and update effort.'
+                ]
+            },
+            'finetuned-support': {
+                title: 'Fine-Tuned Customer Support Chatbot using OpenAI GPT',
+                tech: 'OpenAI GPT Fine-Tuning, Dataset Formatting, Anonymization',
+                bullets: [
+                    'Designed and fine-tuned an OpenAI GPT model on domain-specific customer support data over an extended development period.',
+                    'Built a production-style chatbot capable of handling policy, shipping, and product inquiries automatically.',
+                    'Iteratively improved model performance through dataset expansion, evaluation, and retraining.',
+                    'Reduced response latency and operational cost by replacing complex prompts with a fine-tuned model.',
+                    'Implemented data preprocessing and anonymization to ensure privacy compliance.'
+                ]
+            },
+            'face-rec': {
+                title: 'Face Detection & Recognition from Oscar Footage',
+                tech: 'Python, MTCNN, Inception-ResNet V1, OpenCV, Flask, Cosine Similarity',
+                bullets: [
+                    'Built a face recognition system to detect and recognize Lupita Nyong’o and Christoph Waltz from an Oscar award ceremony video using MTCNN and Inception-ResNet V1.',
+                    'Extracted video frames and applied MTCNN to localize faces by generating bounding boxes and cropping facial regions accurately.',
+                    'Generated high-dimensional 512-D face embeddings using Inception-ResNet V1 to build a known face embedding library.',
+                    'Designed a recognition pipeline comparing embeddings using cosine similarity to classify test images in real time.',
+                    'Deployed the solution as a Flask web app allowing image uploads with real-time celebrity recognition feedback.'
+                ]
+            },
+            'diffusion-lora': {
+                title: 'Real-Time Diffusion Generator & Meme Generator with LoRA',
+                tech: 'Stable Diffusion v1.4, LoRA Fine-Tuning, Streamlit, PyTorch, PIL',
+                bullets: [
+                    'Built and deployed an interactive Streamlit web application generating images from text prompts using transformer-based Stable Diffusion models.',
+                    'Applied LoRA (Low-Rank Adaptation) fine-tuning to adapt the model to specific custom styles without retraining full network weights.',
+                    'Implemented efficient GPU/CPU device management and caching mechanisms to reduce inference latency.',
+                    'Applied dynamic text overlays using PIL (Python Imaging Library) for custom meme-style annotations and visual presentation.'
+                ]
+            },
+            'stock-garch': {
+                title: 'Stock Volatility Forecasting API using GARCH',
+                tech: 'FastAPI, GARCH / ARCH Models, SQLite, Python, statsmodels',
+                bullets: [
+                    'Developed a financial time-series forecasting system to predict stock volatility using GARCH models.',
+                    'Implemented data pipeline fetching historical stock prices from external APIs into an SQLite database.',
+                    'Engineered features including daily returns, volatility metrics, and autocorrelation analysis.',
+                    'Trained ARCH/GARCH models to capture volatility clustering in stock returns, evaluating model performance via AIC/BIC diagnostics.',
+                    'Exposed RESTful prediction endpoints using FastAPI with modular repository pattern architecture.'
+                ]
+            },
+            'building-damage': {
+                title: 'Building Damage Severity Classification for Disaster Response',
+                tech: 'Python, XGBoostClassifier, GridSearchCV, Ordinal Encoder, SQLite',
+                bullets: [
+                    'Built an end-to-end machine learning pipeline to classify building damage severity for post-disaster response.',
+                    'Extracted structural and damage datasets from SQLite, applying Ordinal Encoding for categorical variables.',
+                    'Optimized an XGBoostClassifier using GridSearchCV, achieving 97% classification accuracy.',
+                    'Identified high-risk buildings to enable proactive planning that could reduce casualties by 20–40% and reconstruction costs up to 50%.'
+                ]
+            },
+            'iot-air-quality': {
+                title: 'IoT Air Quality Monitoring & Multi-City Grafana Visualization',
+                tech: 'Node-RED, InfluxDB, Grafana, Open Meteo API, Time-Series Data',
+                bullets: [
+                    'Designed a three-part open-source IoT architecture: Node-RED for ingestion, InfluxDB for time-series, and Grafana for visualization.',
+                    'Engineered flow-based Node-RED data pipelines fetching real-time air quality metrics for 5 German cities (Berlin, Munich, Dresden, Essen, Zwickau).',
+                    'Monitored pollutants including PM10, PM2.5, Carbon Monoxide (CO), Methane, Dust, and UV Index with custom threshold alerts.',
+                    'Designed custom Grafana dashboards featuring heatmaps, gauge meters, histograms, and Geo Maps to contextualize air quality.'
+                ]
+            },
             'smart-meter-pdm': {
                 title: 'Predictive Maintenance for Smart Water Meters',
                 tech: 'Streamlit, XGBoost, Random Forest, Python, Scikit-Learn',
@@ -1102,20 +1447,12 @@
                     'Reduced computational overhead by 30% while maintaining target accuracy.'
                 ]
             },
-            'face-rec': {
-                title: 'Face Recognition & Tracking on Video Footage',
-                tech: 'Python, MTCNN, Inception-ResNet V1, OpenCV, PyTorch',
-                bullets: [
-                    'Built an end-to-end facial recognition pipeline for processing video streams.',
-                    'Utilized MTCNN for face detection and Inception-ResNet V1 for extracting 512-dimensional face embeddings.'
-                ]
-            },
             'iot-weather': {
                 title: 'IoT Weather Station & Voice-Integrated Home Automation System',
                 tech: 'ESP32, ESPHome, Home Assistant, Python, PCB Design, Hall Sensors',
                 bullets: [
                     'Engineered an environmental station using an ESP32 microcontroller to track temperature, humidity, pressure, and wind.',
-                    'Designed custom PCB and 3D printed mechanical anemometer/rain assemblies.',
+                    'Designed custom PCB and 3D printed mechanical anemometer/rain assemblies using Hall Effect sensors (A3144).',
                     'Deployed ESPHome YAML firmware integrated with local Home Assistant VM and custom Python voice commands.'
                 ]
             }
@@ -1132,7 +1469,7 @@
                 <p class="text-xs font-mono text-slate-500 mb-4">${data.tech}</p>
                 <div class="h-px bg-slate-100 my-4"></div>
                 <ul class="space-y-3 text-slate-600 text-xs leading-relaxed mb-6">
-                    ${data.bullets.map(bullet => `<li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-emerald-600 mt-0.5 text-xs"></i><span>${bullet}</span></li>`).join('')}
+                    ${data.bullets.map(bullet => `<li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-emerald-600 mt-0.5 text-xs shrink-0"></i><span>${bullet}</span></li>`).join('')}
                 </ul>
                 <div class="flex justify-end pt-2">
                     <button onclick="closeProjectModal()" class="px-5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-mono text-xs font-bold">Close</button>
@@ -1147,20 +1484,22 @@
 
         // AI Portfolio Assistant Chatbot Knowledge Base
         const knowledgeBase = [
+            { keywords: ['slack', 'volunteer', 'slackbot', 'sheets', 'bot'], answer: 'I built an AI-Powered Slackbot for Volunteer Management using OpenAI chat models to process natural language queries, interpret user intent, and orchestrate read/write operations on Google Sheets via API.' },
+            { keywords: ['support', 'gpt', 'fine-tuned', 'fine tuned', 'fine tune', 'customer support'], answer: 'I designed and fine-tuned an OpenAI GPT model on domain-specific customer support data to automatically handle shipping, policy, and product inquiries while lowering latency and API costs.' },
+            { keywords: ['oscar', 'face', 'lupita', 'waltz', 'facial', 'mtcnn', 'resnet'], answer: 'I built a video face recognition system using MTCNN face detection and Inception-ResNet V1 512-D embeddings to detect and recognize Lupita Nyong’o and Christoph Waltz in Oscar ceremony footage, deployed via Flask.' },
+            { keywords: ['garch', 'stock', 'volatility', 'arch', 'fastapi'], answer: 'I built a Stock Volatility Forecasting API in FastAPI using GARCH/ARCH time-series models to capture volatility clustering in returns data, backed by an SQLite database.' },
+            { keywords: ['building', 'damage', 'disaster', 'xgboost', 'gridsearchcv'], answer: 'I developed a Building Damage Severity Classification model using XGBoost and GridSearchCV on SQLite disaster structural data, achieving 97% classification accuracy.' },
+            { keywords: ['protocol', 'protocols', 'lorawan', 'lora', 'tcp', 'ip', 'mqtt', 'wifi', 'networking', 'node-red', 'grafana', 'influxdb'], answer: 'In IoT & Telemetry, I am experienced in communication protocols like <strong>LoRaWAN</strong>, <strong>TCP/IP</strong>, <strong>MQTT</strong>, and HTTP/REST. I build data ingestion pipelines using <strong>Node-RED</strong>, store time-series telemetry in <strong>InfluxDB</strong>, and design real-time monitoring dashboards in <strong>Grafana</strong>.' },
             { keywords: ['email', 'mail', 'contact', 'reach', 'message'], answer: 'You can email Saijaya Rami Reddy Chilekampalli directly at: <a href="mailto:saijaya.c@gmail.com" class="text-blue-600 underline font-bold">saijaya.c@gmail.com</a>' },
             { keywords: ['linkedin', 'profile', 'connect'], answer: 'Connect on LinkedIn at: <a href="https://www.linkedin.com/in/saijaya-rami-reddy-chilekampalli-71b175170/" target="_blank" class="text-blue-600 underline font-bold">linkedin.com/in/saijaya-rami-reddy-chilekampalli-71b175170/</a>' },
             { keywords: ['github', 'code', 'repo', 'repository', 'projects'], answer: 'Check out the GitHub profile and code repositories at: <a href="https://github.com/sac23nht" target="_blank" class="text-blue-600 underline font-bold">github.com/sac23nht</a>' },
             { keywords: ['ubica', 'robotics', 'working student', 'perception', 'shelf', 'retail', 'oos', 'out of shelf'], answer: 'At Ubica Robotics (Bremen, Germany), I served as a Working Student in the Perception Team (Mar 2026 – Aug 2026). I built efficient computer vision pipelines on ROS2 to understand retail environments, increasing Out-of-Shelf product detection Precision from 85% to 92% and Recall from 79% to 89%.' },
             { keywords: ['ros', 'ros2', 'robot', 'colcon', 'testbench', 'goal'], answer: 'In ROS2, I integrated computer vision perception pipelines on mobile retail robots, triggering goal execution, stage verification, and metric evaluation on testbenches. I also authored unit tests using colcon build/test and built Python automated scripts to evaluate ground truth metrics (TP, FP, FN, Precision, Recall).' },
-            { keywords: ['metric', 'precision', 'recall', '85', '92', '79', '89', 'script'], answer: 'For retail shelf Out-of-Shelf product identification at Ubica Robotics, I designed new scenario logics that boosted Precision from 85% to 92% and Recall from 79% to 89%. I also wrote automated Python scripts that parsed ground-truth CSVs to output TP, FP, FN, Precision, and Recall.' },
             { keywords: ['certification', 'certifications', 'worldquant', 'n8n', 'fine-tune', 'llm', 'cert'], answer: 'My certifications include: 1) Applied AI Lab: Deep Learning for Computer Vision (WorldQuant University, Aug 2025), 2) Applied Data Science Lab: Machine Learning (WorldQuant University, Jul 2025), 3) Build AI Agents & Automate Workflows with n8n (LinkedIn Learning, Nov 17, 2025), and 4) Fine-Tune Your LLMs (LinkedIn Learning, Nov 17, 2025).' },
-            { keywords: ['gitlab', 'git', 'pull', 'merge', 'mr', 'branch', 'bug'], answer: 'I used GitLab for version control at Ubica Robotics: creating branches, issuing Merge Requests (MRs), rebasing/pulling main to keep code current, debugging existing codebase algorithms to fix edge-case bugs, and maintaining production-ready ROS2 code.' },
             { keywords: ['thesis', 'internship', 'looking', 'opportunity', 'werkstudent', 'master thesis', 'job search', 'open'], answer: 'I am currently pursuing my M.Sc. in IoT & Smart Systems at Westsächsische Hochschule Zwickau (WHZ), Germany. With experience across Ubica Robotics, GalaxE Solutions, and TCS, I am actively seeking Master Thesis positions or full-time opportunities in AIoT, Robotic Perception, Computer Vision, and Machine Learning.' },
-            { keywords: ['master', 'study', 'education', 'zwickau', 'degree', 'university', 'whz'], answer: 'I am currently doing my M.Sc. in Internet of Things & Smart Systems at Westsächsische Hochschule Zwickau, Germany. My coursework covers AIoT architectures, microcontrollers (ESP32), embedded systems, sensor telemetry, and intelligent automation.' },
             { keywords: ['weather', 'iot', 'esp32', 'home assistant', 'sensor', 'pcb', '3d print'], answer: 'During my Master’s, I engineered an IoT Weather Station & Voice Home Automation System featuring an ESP32 with custom PCB, 3D-printed anemometer & rain gauge using Hall Effect sensors (A3144), ESPHome firmware, local Home Assistant VM, and a custom Python voice assistant.' },
-            { keywords: ['skill', 'python', 'stack', 'tech', 'tool'], answer: 'Primary skills include ROS2, Colcon Unit Testing, Retail CV, Expert Python, PyTorch, XGBoost, Streamlit, YOLOv8, MTCNN/ResNet, LangChain, Pinecone, ESP32/ESPHome, Home Assistant, PCB Design, n8n Agents, LLM Fine-Tuning, FastAPI, Flask, SQL, AWS, Docker, GitLab, and Power BI.' },
-            { keywords: ['galaxe', 'surveillance', 'ppe'], answer: 'At GalaxE Solutions (Junior Data Scientist), I designed a YOLOv8 safety surveillance system reducing manual effort by 60% and achieved 92%+ precision for PPE compliance checks.' },
-            { keywords: ['tcs', 'tata', 'analyst', 'vodafone'], answer: 'At TCS (Junior Data Analyst), I executed ETL processes on Vodafone sales data using Python/SQL and created Power BI dashboards.' }
+            { keywords: ['skill', 'python', 'stack', 'tech', 'tool'], answer: 'Primary skills include ROS2, Colcon Unit Testing, LoRaWAN, TCP/IP, MQTT, Node-RED, Grafana, InfluxDB, ESP32/ESPHome, Home Assistant, PCB Design, Retail CV, Expert Python, PyTorch, XGBoost, Streamlit, YOLOv8, MTCNN/ResNet, LangChain, Pinecone, n8n Agents, LLM Fine-Tuning, FastAPI, Flask, SQL, AWS, Docker, GitLab, and Power BI.' },
+            { keywords: ['galaxe', 'surveillance', 'ppe'], answer: 'At GalaxE Solutions (Junior Data Scientist), I designed a YOLOv8 safety surveillance system reducing manual effort by 60% and achieved 92%+ precision for PPE compliance checks.' }
         ];
 
         function sendMessage() {
@@ -1218,7 +1557,7 @@
                     return kb.answer;
                 }
             }
-            return "I am trained on this portfolio! Ask me about my Working Student role at Ubica Robotics, ROS2 pipelines, WorldQuant & LinkedIn Learning certifications, Master Thesis search, or previous work at GalaxE and TCS.";
+            return "I am trained on this portfolio! Ask me about my Working Student role at Ubica Robotics, ROS2 pipelines, AI Slackbots, Fine-Tuned GPT models, face recognition, IoT protocols (LoRaWAN, TCP/IP, MQTT, Node-RED, Grafana), Master Thesis search, or certifications.";
         }
 
         function clearChat() {
@@ -1228,7 +1567,7 @@
                         <i class="fa-solid fa-robot"></i>
                     </div>
                     <div class="bg-white border border-slate-200 p-3 rounded-xl text-slate-700 max-w-xl shadow-sm">
-                        Chat reset. Ask me anything about Ubica Robotics, ROS2, thesis search, experience, or certifications!
+                        Chat reset. Ask me anything about Ubica Robotics, ROS2, AI Slackbot, Fine-Tuned GPT, face recognition, thesis search, or experience!
                     </div>
                 </div>
             `;
